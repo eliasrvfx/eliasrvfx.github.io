@@ -1,0 +1,1524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Elias Rodriguez — Technical Artist & VFX</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600&family=Barlow+Condensed:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+:root {
+  --bg:      #0a0a0a;
+  --bg2:     #111111;
+  --light:   #f4f1ec;
+  --text:    #f4f1ec;
+  --dark:    #0a0a0a;
+  --muted:   #888480;
+  --gold:    #d4a853;
+  --teal:    #3ecfb2;
+  --coral:   #e8694a;
+  --ice:     #7ab8d4;
+  --border:  rgba(255,255,255,.08);
+  --borderl: rgba(0,0,0,.1);
+}
+
+body {
+  font-family: 'Barlow', sans-serif;
+  font-weight: 300;
+  overflow-x: hidden;
+  background: var(--bg);
+  color: var(--text);
+}
+a { color: inherit; text-decoration: none; }
+button { font-family: inherit; cursor: pointer; }
+
+/* ── NAV ── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 52px; height: 60px;
+  background: rgba(10,10,10,.95);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border);
+}
+.nav-logo {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 18px; font-weight: 600;
+  letter-spacing: .1em; text-transform: uppercase;
+  color: var(--text);
+}
+.nav-logo span { color: var(--teal); }
+.nav-right { display: flex; align-items: center; gap: 32px; }
+.nav-right a {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 13px; font-weight: 500;
+  letter-spacing: .14em; text-transform: uppercase;
+  color: var(--muted); transition: color .2s;
+}
+.nav-right a:hover { color: var(--text); }
+.nav-cta {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 12px; font-weight: 600;
+  letter-spacing: .14em; text-transform: uppercase;
+  padding: 8px 22px;
+  background: var(--teal);
+  color: var(--dark);
+  border: none;
+  transition: all .2s;
+  display: inline-block;
+}
+.nav-cta:hover { background: #5edfc8; }
+
+/* ── HERO ── */
+#s1 {
+  height: 100vh; min-height: 600px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding-top: 60px;
+  position: relative; overflow: hidden;
+}
+
+.hero-left {
+  display: flex; flex-direction: column; justify-content: center;
+  padding: 80px 52px;
+  position: relative; z-index: 2;
+  background: var(--bg);
+}
+
+.hero-tag {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 13px; font-weight: 500;
+  letter-spacing: .22em; text-transform: uppercase;
+  color: var(--teal); margin-bottom: 24px;
+  display: flex; align-items: center; gap: 12px;
+}
+.hero-tag::before {
+  content:''; width: 24px; height: 2px; background: var(--teal);
+}
+
+.hero-name {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: clamp(64px, 9vw, 136px);
+  font-weight: 700; line-height: .9;
+  text-transform: uppercase;
+  letter-spacing: -.01em;
+  color: var(--text);
+  margin-bottom: 8px;
+}
+.hero-name .line2 {
+  color: var(--gold);
+  font-style: italic;
+  font-weight: 300;
+  font-family: 'Barlow', sans-serif;
+  font-size: clamp(32px, 4.5vw, 68px);
+  text-transform: none;
+  letter-spacing: 0;
+  display: block;
+  margin-top: 4px;
+}
+
+.hero-role {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 14px; font-weight: 400;
+  letter-spacing: .18em; text-transform: uppercase;
+  color: var(--muted); margin: 24px 0;
+}
+
+.hero-desc {
+  font-size: 16px; font-weight: 300; line-height: 1.75;
+  color: rgba(244,241,236,.65);
+  max-width: 420px; margin-bottom: 40px;
+}
+
+.hero-btns { display: flex; gap: 12px; flex-wrap: wrap; }
+.btn-teal {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 13px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase;
+  padding: 12px 28px; background: var(--teal); color: var(--dark); border: none;
+  transition: all .2s; display: inline-block;
+}
+.btn-teal:hover { background: #5edfc8; transform: translateY(-1px); }
+.btn-ghost {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 13px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase;
+  padding: 11px 28px; background: transparent; color: var(--text);
+  border: 1px solid var(--border); transition: all .2s; display: inline-block;
+}
+.btn-ghost:hover { border-color: var(--teal); color: var(--teal); }
+
+.hero-right {
+  position: relative; overflow: hidden;
+}
+.hero-right img {
+  width: 100%; height: 100%; object-fit: cover;
+  filter: brightness(.7) contrast(1.05);
+  transition: filter .6s;
+}
+.hero-right:hover img { filter: brightness(.85) contrast(1.08); }
+.hero-right-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to right, var(--bg) 0%, transparent 30%);
+  pointer-events: none;
+}
+
+/* colored accent bar */
+.accent-bar {
+  position: absolute; bottom: 0; left: 0; right: 0; height: 4px;
+  background: linear-gradient(to right, var(--teal) 0%, var(--gold) 50%, var(--coral) 100%);
+  z-index: 10;
+}
+
+/* ── COLOR STRIP ── */
+.color-strip {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  height: 6px;
+}
+.cs1 { background: var(--teal); }
+.cs2 { background: var(--gold); }
+.cs3 { background: var(--coral); }
+.cs4 { background: var(--ice); }
+
+/* ── ABOUT ── */
+#s2 {
+  background: var(--light);
+  color: var(--dark);
+  padding: 110px 52px;
+  display: grid; grid-template-columns: 5fr 4fr; gap: 80px;
+  align-items: center;
+}
+
+.sec-label {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 12px; font-weight: 600;
+  letter-spacing: .26em; text-transform: uppercase;
+  margin-bottom: 18px;
+  display: flex; align-items: center; gap: 10px;
+}
+.sec-label.teal { color: var(--teal); }
+.sec-label.teal::before { content:''; width:20px; height:2px; background:var(--teal); }
+.sec-label.gold { color: var(--gold); }
+.sec-label.gold::before { content:''; width:20px; height:2px; background:var(--gold); }
+.sec-label.coral { color: var(--coral); }
+.sec-label.coral::before { content:''; width:20px; height:2px; background:var(--coral); }
+
+.sec-heading {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: clamp(32px, 4vw, 56px);
+  font-weight: 700; text-transform: uppercase;
+  line-height: .95; letter-spacing: -.01em;
+  margin-bottom: 28px;
+}
+.sec-heading em {
+  font-family: 'Barlow', sans-serif;
+  font-weight: 300; font-style: italic;
+  text-transform: none; font-size: .85em;
+  display: block; color: var(--teal);
+}
+
+.about-body {
+  font-size: 17px; font-weight: 300; line-height: 1.8;
+  color: #3a3530;
+}
+
+.cap-list { display: flex; flex-direction: column; }
+.cap-item {
+  display: flex; align-items: center; gap: 16px;
+  padding: 18px 0;
+  border-bottom: 1px solid var(--borderl);
+}
+.cap-item:first-child { border-top: 1px solid var(--borderl); }
+.cap-dot {
+  width: 10px; height: 10px; border-radius: 50%;
+  flex-shrink: 0;
+}
+.cap-dot.teal { background: var(--teal); }
+.cap-dot.gold { background: var(--gold); }
+.cap-dot.coral { background: var(--coral); }
+.cap-dot.ice { background: var(--ice); }
+.cap-dot.muted { background: #bbb5af; }
+
+.cap-text {
+  font-size: 15px; font-weight: 400; color: var(--dark); flex: 1;
+}
+.cap-badge {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 10px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* ── WORK — full-bleed rows ── */
+#s3 { background: var(--bg); }
+
+.work-header {
+  padding: 80px 52px 44px;
+  display: flex; align-items: baseline; justify-content: space-between;
+  border-bottom: 1px solid var(--border);
+}
+.work-title {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: clamp(32px, 4.5vw, 60px);
+  font-weight: 700; text-transform: uppercase;
+  letter-spacing: -.01em; color: var(--text);
+}
+.work-title em {
+  font-family: 'Barlow', sans-serif;
+  font-weight: 300; font-style: italic;
+  text-transform: none; color: var(--gold);
+}
+.work-count {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 13px; font-weight: 500; letter-spacing: .16em; text-transform: uppercase;
+  color: var(--muted);
+}
+
+.project-row {
+  height: 82vh; min-height: 480px;
+  position: relative; overflow: hidden; display: flex; align-items: flex-end;
+}
+.proj-bg {
+  position: absolute; inset: 0;
+  background-size: cover; background-position: center;
+  filter: brightness(.5); transition: filter .7s, transform .8s;
+}
+.project-row:hover .proj-bg { filter: brightness(.65); transform: scale(1.025); }
+.proj-grad {
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(10,10,10,.96) 0%, rgba(10,10,10,.1) 60%, transparent 100%);
+}
+.proj-accent {
+  position: absolute; top: 0; left: 0; bottom: 0; width: 5px;
+}
+
+.proj-info {
+  position: relative; z-index: 2;
+  width: 100%; padding: 48px 52px;
+  display: flex; align-items: flex-end; justify-content: space-between;
+}
+.proj-left {}
+.proj-cat {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 12px; font-weight: 600; letter-spacing: .22em; text-transform: uppercase;
+  margin-bottom: 10px;
+}
+.proj-title {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: clamp(48px, 7vw, 100px);
+  font-weight: 700; text-transform: uppercase;
+  line-height: .9; color: var(--text); letter-spacing: -.01em;
+}
+.proj-sub {
+  font-size: 14px; font-weight: 300; color: rgba(244,241,236,.5);
+  margin-top: 12px; letter-spacing: .02em;
+}
+.proj-tags { display: flex; flex-direction: column; align-items: flex-end; gap: 6px; }
+.proj-tag {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 11px; font-weight: 500; letter-spacing: .14em; text-transform: uppercase;
+  padding: 5px 14px;
+  border: 1px solid rgba(244,241,236,.18);
+  color: rgba(244,241,236,.45);
+}
+.proj-wip {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 11px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase;
+  padding: 6px 16px; border: 1px solid var(--gold); color: var(--gold);
+}
+.proj-divider { height: 3px; background: var(--bg); }
+
+/* ── LIDAR SECTION — dark with color ── */
+#s4 { background: #0d1117; padding: 110px 52px; }
+
+.lidar-top {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 80px;
+  align-items: start; margin-bottom: 72px;
+}
+.lidar-body {
+  font-size: 17px; font-weight: 300; line-height: 1.8;
+  color: rgba(244,241,236,.6); padding-top: 6px;
+}
+.lidar-body strong { color: var(--text); font-weight: 500; }
+
+.pipeline-steps {
+  display: grid; grid-template-columns: repeat(5, 1fr); gap: 0;
+  background: var(--border); border: 1px solid var(--border);
+  margin-bottom: 32px;
+}
+.pipe-step {
+  background: #0d1117; padding: 36px 28px;
+  border-right: 1px solid var(--border);
+  position: relative;
+}
+.pipe-step:last-child { border-right: none; }
+
+.pipe-step-color {
+  height: 3px; width: 40px; margin-bottom: 20px; border-radius: 2px;
+}
+.pipe-num {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 11px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase;
+  color: var(--muted); margin-bottom: 10px;
+}
+.pipe-title {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 15px; font-weight: 700; text-transform: uppercase;
+  letter-spacing: .06em; color: var(--text); margin-bottom: 10px;
+}
+.pipe-desc {
+  font-size: 12px; font-weight: 300; line-height: 1.65;
+  color: rgba(244,241,236,.45);
+}
+.pipe-tool {
+  margin-top: 14px;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 10px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase;
+  padding: 4px 10px; display: inline-block;
+}
+
+.lidar-note {
+  background: rgba(62,207,178,.06);
+  border: 1px solid rgba(62,207,178,.2);
+  padding: 24px 28px;
+  display: flex; align-items: flex-start; gap: 16px;
+}
+.lidar-note-bar { width: 3px; flex-shrink: 0; background: var(--teal); border-radius: 2px; }
+.lidar-note-text {
+  font-size: 15px; font-weight: 300; line-height: 1.75;
+  color: rgba(244,241,236,.7);
+}
+.lidar-note-text strong { color: var(--teal); font-weight: 500; }
+
+/* ── SKILLS ── */
+#s5 { background: var(--light); color: var(--dark); padding: 110px 52px; }
+
+.skills-top {
+  display: flex; align-items: baseline; justify-content: space-between;
+  margin-bottom: 56px;
+}
+.skills-heading {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: clamp(32px, 4vw, 56px);
+  font-weight: 700; text-transform: uppercase; letter-spacing: -.01em;
+}
+.skills-heading em {
+  font-family: 'Barlow', sans-serif; font-weight: 300;
+  font-style: italic; text-transform: none; color: var(--gold);
+}
+
+.skills-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 3px;
+  background: rgba(0,0,0,.08);
+}
+.skill-card {
+  background: var(--light); padding: 40px 36px;
+  transition: background .25s;
+  position: relative; overflow: hidden;
+}
+.skill-card:hover { background: #ece8e2; }
+.skill-card-top-bar {
+  height: 3px; width: 100%;
+  position: absolute; top: 0; left: 0;
+}
+.skill-card-num {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 48px; font-weight: 700; text-transform: uppercase;
+  color: rgba(0,0,0,.06); line-height: 1;
+  position: absolute; top: 12px; right: 20px;
+}
+.skill-card-title {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 17px; font-weight: 700; text-transform: uppercase;
+  letter-spacing: .06em; margin-bottom: 20px; color: var(--dark);
+}
+.skill-list { display: flex; flex-direction: column; gap: 8px; }
+.skill-li {
+  font-size: 13px; font-weight: 400; color: #5a5550;
+  display: flex; align-items: center; gap: 9px;
+}
+.skill-li::before {
+  content: ''; width: 5px; height: 5px; border-radius: 50%;
+  flex-shrink: 0;
+}
+.s-teal .skill-li::before { background: var(--teal); }
+.s-gold .skill-li::before { background: var(--gold); }
+.s-coral .skill-li::before { background: var(--coral); }
+
+/* quote card */
+.skill-card.quote-card {
+  display: flex; flex-direction: column; justify-content: space-between;
+  background: var(--dark); color: var(--text);
+}
+.quote-card:hover { background: #111; }
+.quote-text {
+  font-family: 'Barlow', sans-serif;
+  font-size: 20px; font-weight: 300; font-style: italic;
+  line-height: 1.5; color: rgba(244,241,236,.8);
+}
+.quote-text span { color: var(--teal); font-style: normal; font-weight: 500; }
+
+/* ── CONTACT ── */
+#s6 {
+  height: 100vh; min-height: 600px;
+  display: flex; align-items: center; justify-content: center;
+  position: relative; overflow: hidden; text-align: center;
+}
+.contact-bg {
+  position: absolute; inset: 0;
+  background-image: url('https://static.wixstatic.com/media/b97032_4f2d1a6b5e7c4bbfba710e1803c84311~mv2.png/v1/crop/x_936,y_0,w_833,h_1080/fill/w_425,h_551,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Space_ship_door_opening_0468.png');
+  background-size: cover; background-position: center;
+  filter: brightness(.18) saturate(1.2);
+}
+.contact-overlay {
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse at center, rgba(10,10,10,.4) 0%, rgba(10,10,10,.85) 100%);
+}
+/* colored top line on contact */
+.contact-colorbar {
+  position: absolute; top: 0; left: 0; right: 0; height: 4px;
+  background: linear-gradient(to right, var(--teal), var(--gold), var(--coral));
+}
+.contact-content { position: relative; z-index: 2; padding: 40px; max-width: 700px; }
+
+.contact-label {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 12px; font-weight: 600; letter-spacing: .28em; text-transform: uppercase;
+  color: var(--teal); margin-bottom: 20px;
+  display: flex; align-items: center; justify-content: center; gap: 14px;
+}
+.contact-label::before, .contact-label::after {
+  content:''; display:block; width:28px; height:2px; background:var(--teal);
+}
+.contact-heading {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: clamp(42px, 7vw, 96px);
+  font-weight: 700; text-transform: uppercase; letter-spacing: -.01em;
+  line-height: .92; color: var(--text); margin-bottom: 8px;
+}
+.contact-heading em {
+  font-family: 'Barlow', sans-serif;
+  font-weight: 300; font-style: italic; text-transform: none;
+  color: var(--gold); display: block; font-size: .7em;
+}
+.contact-sub {
+  font-size: 16px; font-weight: 300; color: rgba(244,241,236,.5);
+  margin: 20px 0 40px;
+}
+.contact-email {
+  font-family: 'Barlow', sans-serif;
+  font-size: clamp(16px, 2.5vw, 26px);
+  font-weight: 300; font-style: italic; color: var(--gold);
+  border-bottom: 1px solid rgba(212,168,83,.35);
+  padding-bottom: 3px; display: inline-block; margin-bottom: 44px;
+  transition: border-color .2s;
+}
+.contact-email:hover { border-color: var(--gold); }
+.contact-btns { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
+.cbtn {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 13px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase;
+  padding: 12px 28px; border: none; transition: all .2s; display: inline-block;
+}
+.cbtn.teal { background: var(--teal); color: var(--dark); }
+.cbtn.teal:hover { background: #5edfc8; }
+.cbtn.outline { background: transparent; color: var(--text); border: 1px solid rgba(244,241,236,.25); }
+.cbtn.outline:hover { border-color: var(--gold); color: var(--gold); }
+
+/* footer */
+footer {
+  background: #050505; padding: 20px 52px;
+  display: flex; align-items: center; justify-content: space-between;
+  border-top: 1px solid var(--border);
+}
+.footer-copy { font-size: 11px; color: var(--muted); letter-spacing: .06em; }
+.footer-links { display: flex; gap: 24px; }
+.footer-links a { font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); transition: color .2s; }
+.footer-links a:hover { color: var(--text); }
+
+/* ── REVEAL ── */
+.reveal { opacity: 0; transform: translateY(28px); transition: opacity .8s ease, transform .8s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+.reveal-delay-1 { transition-delay: .1s; }
+.reveal-delay-2 { transition-delay: .2s; }
+.reveal-delay-3 { transition-delay: .3s; }
+.reveal-delay-4 { transition-delay: .4s; }
+
+/* ── PRODUCTION CREDITS ── */
+#credits {
+  background: #0d0d0d;
+  padding: 0 52px 48px;
+  border-bottom: 1px solid var(--border);
+}
+
+.credits-intro {
+  padding: 20px 0 24px;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 11px; font-weight: 600;
+  letter-spacing: .26em; text-transform: uppercase;
+  color: var(--teal);
+  display: flex; align-items: center; gap: 12px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 24px;
+}
+.credits-intro::before { content:''; width:20px; height:2px; background:var(--teal); flex-shrink:0; }
+
+.credits-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 3px; margin-bottom: 3px;
+}
+.credits-grid-bottom {
+  display: grid; grid-template-columns: repeat(2, 1fr); gap: 3px;
+}
+
+.credit-card {
+  background: #111; padding: 28px 28px;
+  position: relative; overflow: hidden;
+  transition: background .25s;
+}
+.credit-card:hover { background: #161616; }
+.credit-card-bar { height: 2px; width: 100%; position: absolute; top: 0; left: 0; right: 0; }
+
+.credit-role {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 10px; font-weight: 600; letter-spacing: .2em; text-transform: uppercase;
+  margin-bottom: 10px; display: flex; align-items: center; gap: 8px;
+}
+.credit-role-line { width: 14px; height: 1px; flex-shrink: 0; }
+
+.credit-title {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 24px; font-weight: 700; text-transform: uppercase;
+  letter-spacing: -.01em; line-height: 1.05; color: var(--text); margin-bottom: 8px;
+}
+.credit-detail {
+  font-size: 11px; font-weight: 300; color: var(--muted); letter-spacing: .04em;
+}
+.credit-detail span {
+  font-size: 10px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase;
+  padding: 2px 8px; margin-left: 6px; border-radius: 2px;
+}
+
+.credit-bg-text {
+  position: absolute; bottom: 12px; right: 18px;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 48px; font-weight: 700; text-transform: uppercase;
+  letter-spacing: -.02em; line-height: 1;
+  color: rgba(244,241,236,.04);
+  pointer-events: none; user-select: none;
+}
+
+.credits-note {
+  margin-top: 16px;
+  padding: 16px 22px;
+  background: rgba(62,207,178,.05);
+  border: 1px solid rgba(62,207,178,.15);
+  display: flex; align-items: center; gap: 14px;
+}
+.credits-note-bar { width: 3px; min-height: 28px; background: var(--teal); border-radius: 1px; flex-shrink: 0; }
+.credits-note-text {
+  font-size: 13px; font-weight: 300;
+  color: rgba(244,241,236,.55); line-height: 1.6;
+}
+.credits-note-text strong { color: var(--teal); font-weight: 500; }
+
+@media (max-width: 900px) {
+  #credits { padding: 0 24px 40px; }
+  .credits-grid { grid-template-columns: 1fr 1fr; }
+  .credits-grid-bottom { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 600px) {
+  .credits-grid { grid-template-columns: 1fr; }
+  .credits-grid-bottom { grid-template-columns: 1fr; }
+}
+
+
+#gallery { background: var(--bg2); padding: 110px 52px; }
+
+.gallery-header {
+  display: flex; align-items: baseline; justify-content: space-between;
+  margin-bottom: 48px;
+}
+.gallery-title {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: clamp(32px, 4vw, 56px);
+  font-weight: 700; text-transform: uppercase; letter-spacing: -.01em;
+  color: var(--text);
+}
+.gallery-title em {
+  font-family: 'Barlow', sans-serif; font-weight: 300;
+  font-style: italic; text-transform: none; color: var(--coral);
+}
+.gallery-sub {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 12px; font-weight: 500; letter-spacing: .18em; text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* filter tabs */
+.gallery-filters {
+  display: flex; gap: 4px; flex-wrap: wrap; margin-bottom: 36px;
+}
+.gfilter {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 12px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase;
+  padding: 8px 20px;
+  background: transparent; color: var(--muted);
+  border: 1px solid var(--border);
+  transition: all .2s;
+}
+.gfilter:hover { color: var(--text); border-color: rgba(255,255,255,.2); }
+.gfilter.active { color: var(--teal); border-color: var(--teal); background: rgba(62,207,178,.06); }
+
+/* masonry-style grid */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4px;
+}
+.gallery-item {
+  position: relative; overflow: hidden;
+  background: #1a1a1a;
+  cursor: pointer;
+}
+.gallery-item.wide { grid-column: span 2; }
+.gallery-item.tall { aspect-ratio: 9/10; }
+.gallery-item:not(.tall) { aspect-ratio: 16/9; }
+.gallery-item.wide:not(.tall) { aspect-ratio: 21/9; }
+
+.gallery-item img {
+  width: 100%; height: 100%; object-fit: cover;
+  filter: brightness(.75) saturate(.9);
+  transition: filter .5s, transform .6s;
+}
+.gallery-item:hover img { filter: brightness(.95) saturate(1.1); transform: scale(1.04); }
+
+.gallery-item-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(10,10,10,.85) 0%, transparent 50%);
+  opacity: 0; transition: opacity .35s;
+  display: flex; align-items: flex-end; padding: 20px;
+}
+.gallery-item:hover .gallery-item-overlay { opacity: 1; }
+
+.gallery-item-label {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 13px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase;
+  color: var(--text);
+}
+.gallery-item-sub {
+  font-size: 11px; color: var(--muted); margin-top: 3px;
+}
+
+/* video embed */
+.gallery-video-wrap {
+  position: relative; overflow: hidden;
+  aspect-ratio: 16/9; background: #000;
+  grid-column: span 3;
+}
+.gallery-video-wrap iframe {
+  width: 100%; height: 100%; border: none; display: block;
+}
+.gallery-video-label {
+  position: absolute; top: 16px; left: 16px;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 11px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase;
+  padding: 5px 14px;
+  background: rgba(10,10,10,.8); color: var(--teal);
+  border: 1px solid rgba(62,207,178,.3);
+  pointer-events: none;
+}
+
+/* hidden gallery items */
+.gallery-item.g-hidden { display: none; }
+
+/* ── BREAKDOWNS ── */
+#breakdowns { background: var(--light); color: var(--dark); padding: 110px 52px; }
+
+.breakdowns-header { margin-bottom: 64px; }
+.breakdowns-title {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: clamp(32px, 4vw, 56px);
+  font-weight: 700; text-transform: uppercase; letter-spacing: -.01em;
+  color: var(--dark);
+}
+.breakdowns-title em {
+  font-family: 'Barlow', sans-serif; font-weight: 300;
+  font-style: italic; text-transform: none; color: var(--gold);
+}
+.breakdowns-intro {
+  font-size: 16px; font-weight: 300; line-height: 1.8; color: #5a5550;
+  max-width: 600px; margin-top: 16px;
+}
+
+/* breakdown cards */
+.breakdown-card {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 0; margin-bottom: 4px;
+  background: var(--borderl); overflow: hidden;
+  min-height: 420px;
+}
+.breakdown-card.flip { direction: rtl; }
+.breakdown-card.flip > * { direction: ltr; }
+
+.breakdown-img {
+  position: relative; overflow: hidden;
+  background: #1a1a1a; min-height: 340px;
+}
+.breakdown-img img {
+  width: 100%; height: 100%; object-fit: cover;
+  filter: brightness(.7) saturate(.85);
+  transition: filter .5s, transform .6s;
+}
+.breakdown-card:hover .breakdown-img img {
+  filter: brightness(.9) saturate(1.05); transform: scale(1.03);
+}
+
+.breakdown-body {
+  background: #fff; padding: 52px 48px;
+  display: flex; flex-direction: column; justify-content: center;
+}
+
+.breakdown-num {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 11px; font-weight: 600; letter-spacing: .22em; text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.breakdown-title {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: clamp(28px, 3.5vw, 48px);
+  font-weight: 700; text-transform: uppercase; letter-spacing: -.01em;
+  line-height: .95; margin-bottom: 20px; color: var(--dark);
+}
+.breakdown-desc {
+  font-size: 15px; font-weight: 300; line-height: 1.8; color: #4a453f;
+  margin-bottom: 28px;
+}
+.breakdown-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 28px; }
+.bd-tag {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 10px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase;
+  padding: 5px 12px; border: 1px solid rgba(0,0,0,.15); color: #7a7570;
+}
+
+.breakdown-steps {
+  display: flex; flex-direction: column; gap: 10px;
+}
+.bd-step {
+  display: flex; align-items: flex-start; gap: 14px;
+}
+.bd-step-dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  flex-shrink: 0; margin-top: 5px;
+}
+.bd-step-text { font-size: 13px; font-weight: 400; color: #3a3530; line-height: 1.6; }
+
+/* tools row */
+.breakdown-tools {
+  display: flex; align-items: center; gap: 8px; flex-wrap: wrap;
+  margin-top: 24px; padding-top: 20px;
+  border-top: 1px solid rgba(0,0,0,.08);
+}
+.bd-tool-label {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 10px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase;
+  color: var(--muted); margin-right: 4px;
+}
+.bd-tool {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 11px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase;
+  padding: 4px 12px; background: #f0ece6; color: #5a5550;
+}
+
+@media (max-width: 900px) {
+  #gallery { padding: 80px 24px; }
+  .gallery-grid { grid-template-columns: 1fr 1fr; }
+  .gallery-item.wide { grid-column: span 2; }
+  .gallery-video-wrap { grid-column: span 2; }
+  #breakdowns { padding: 80px 24px; }
+  .breakdown-card { grid-template-columns: 1fr; min-height: auto; }
+  .breakdown-card.flip { direction: ltr; }
+  .breakdown-img { min-height: 260px; }
+  .breakdown-body { padding: 36px 28px; }
+  .gallery-header { flex-direction: column; gap: 12px; }
+}
+@media (max-width: 600px) {
+  .gallery-grid { grid-template-columns: 1fr; }
+  .gallery-item.wide { grid-column: span 1; }
+  .gallery-video-wrap { grid-column: span 1; }
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 1024px) {
+  .pipeline-steps { grid-template-columns: repeat(3, 1fr); }
+  .pipe-step:nth-child(3) { border-right: none; }
+}
+@media (max-width: 900px) {
+  nav { padding: 0 24px; }
+  .nav-right a { display: none; }
+  #s1 { grid-template-columns: 1fr; }
+  .hero-right { height: 50vw; }
+  .hero-left { padding: 60px 24px 48px; }
+  #s2 { grid-template-columns: 1fr; gap: 48px; padding: 80px 24px; }
+  .work-header { padding: 60px 24px 36px; flex-direction: column; gap: 10px; }
+  .proj-info { padding: 36px 24px; flex-direction: column; align-items: flex-start; gap: 16px; }
+  #s4 { padding: 80px 24px; }
+  .lidar-top { grid-template-columns: 1fr; gap: 32px; }
+  .pipeline-steps { grid-template-columns: 1fr 1fr; }
+  .pipe-step:nth-child(2) { border-right: none; }
+  #s5 { padding: 80px 24px; }
+  .skills-grid { grid-template-columns: 1fr 1fr; }
+  .skills-top { flex-direction: column; gap: 16px; }
+  footer { flex-direction: column; gap: 12px; text-align: center; }
+}
+@media (max-width: 600px) {
+  .skills-grid { grid-template-columns: 1fr; }
+  .pipeline-steps { grid-template-columns: 1fr; }
+  .pipe-step { border-right: none; border-bottom: 1px solid var(--border); }
+  .project-row { height: 60vh; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">Elias <span>R.</span></div>
+  <div class="nav-right">
+    <a href="#credits">Credits</a>
+    <a href="#s2">About</a>
+    <a href="#s3">Work</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#breakdowns">Breakdowns</a>
+    <a href="#s4">Capture</a>
+    <a href="#s5">Skills</a>
+    <a href="#s6" class="nav-cta">Hire Me</a>
+  </div>
+</nav>
+
+<!-- ── S1: HERO ── -->
+<section id="s1">
+  <div class="hero-left reveal">
+    <p class="hero-tag">Technical Artist · VFX · Real-Time Artist</p>
+    <h1 class="hero-name">
+      Elias
+      <span class="line2">Rodriguez</span>
+    </h1>
+    <p class="hero-role">London · Available for hire</p>
+    <p class="hero-desc">
+      I capture real film sets, cast and props using LIDAR and photogrammetry — then process that data through RealityCapture and into Unreal Engine 5, giving directors and DOPs a fully navigable virtual version of their production before they shoot.
+    </p>
+    <div class="hero-btns">
+      <a href="https://www.youtube.com/@eliasrodriguezgallardo2244" target="_blank" class="btn-teal">Watch Showreel</a>
+      <a href="#s3" class="btn-ghost">View Work</a>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <img src="https://static.wixstatic.com/media/b97032_51ad4e7e60b448f88762526ca84882c4~mv2.png/v1/fill/w_980,h_551,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/Space_ship_door_opening_0179.png" alt="Elias Rodriguez — UE5 Cinematic">
+    <div class="hero-right-overlay"></div>
+  </div>
+
+  <div class="accent-bar"></div>
+</section>
+
+<!-- COLOR STRIP -->
+<div class="color-strip">
+  <div class="cs1"></div><div class="cs2"></div>
+  <div class="cs3"></div><div class="cs4"></div>
+</div>
+
+<!-- ── PRODUCTION CREDITS ── -->
+<section id="credits">
+  <p class="credits-intro">Production Credits — Real Film & TV</p>
+
+  <div class="credits-grid">
+
+    <div class="credit-card reveal">
+      <div class="credit-card-bar" style="background:var(--coral)"></div>
+      <p class="credit-role" style="color:var(--coral)">
+        <span class="credit-role-line" style="background:var(--coral)"></span>
+        LIDAR Capture Technician
+      </p>
+      <h3 class="credit-title">Deadpool &<br>Wolverine</h3>
+      <p class="credit-detail">Marvel Studios · 2024<span style="background:rgba(232,105,74,.12);color:var(--coral)">Sets · Environments</span></p>
+      <div class="credit-bg-text">2024</div>
+    </div>
+
+    <div class="credit-card reveal">
+      <div class="credit-card-bar" style="background:var(--gold)"></div>
+      <p class="credit-role" style="color:var(--gold)">
+        <span class="credit-role-line" style="background:var(--gold)"></span>
+        Capture Technician
+      </p>
+      <h3 class="credit-title">Dune:<br>Prophecy S2</h3>
+      <p class="credit-detail">HBO · Max Series<span style="background:rgba(212,168,83,.12);color:var(--gold)">Cast · Props</span></p>
+      <div class="credit-bg-text">S2</div>
+    </div>
+
+    <div class="credit-card reveal">
+      <div class="credit-card-bar" style="background:#9b8ecf)"></div>
+      <p class="credit-role" style="color:#9b8ecf">
+        <span class="credit-role-line" style="background:#9b8ecf"></span>
+        Unreal Engine TD
+      </p>
+      <h3 class="credit-title">Rings of<br>Power S3</h3>
+      <p class="credit-detail">Amazon MGM Studios · Just wrapped<span style="background:rgba(155,142,207,.12);color:#9b8ecf">Studio · UE5</span></p>
+      <div class="credit-bg-text">S3</div>
+    </div>
+
+  </div>
+
+  <div class="credits-grid-bottom">
+
+    <div class="credit-card reveal">
+      <div class="credit-card-bar" style="background:var(--teal)"></div>
+      <p class="credit-role" style="color:var(--teal)">
+        <span class="credit-role-line" style="background:var(--teal)"></span>
+        Capture Technician
+      </p>
+      <h3 class="credit-title">Spider-Man:<br>Brand New Day</h3>
+      <p class="credit-detail">Marvel Studios · Sony Pictures<span style="background:rgba(62,207,178,.1);color:var(--teal)">Cast · Props</span></p>
+      <div class="credit-bg-text">2026</div>
+    </div>
+
+    <div class="credit-card reveal">
+      <div class="credit-card-bar" style="background:var(--ice)"></div>
+      <p class="credit-role" style="color:var(--ice)">
+        <span class="credit-role-line" style="background:var(--ice)"></span>
+        LIDAR Capture Technician
+      </p>
+      <h3 class="credit-title">The Wheel<br>of Time S2</h3>
+      <p class="credit-detail">Amazon Prime Video · South Africa<span style="background:rgba(122,184,212,.12);color:var(--ice)">Sets · Environments</span></p>
+      <div class="credit-bg-text">S2</div>
+    </div>
+
+  </div>
+
+  <div class="credits-note">
+    <div class="credits-note-bar"></div>
+    <p class="credits-note-text">Also: <strong>Sonic the Hedgehog 3</strong> and additional productions. Full credits available on request.</p>
+  </div>
+</section>
+
+<!-- ── S2: ABOUT ── -->
+<section id="s2">
+  <div class="reveal">
+    <p class="sec-label teal">Who I am</p>
+    <h2 class="sec-heading">
+      Technical Artist<br>
+      <em>on set & in engine</em>
+    </h2>
+    <p class="about-body">
+      I bridge the gap between physical production and the virtual world. With hands-on experience scanning real film sets, environments, vehicles, props and cast — and processing that data all the way through to a navigable Unreal Engine 5 scene — I give directors and DOPs the ability to see their entire film before principal photography begins.
+    </p>
+  </div>
+
+  <div class="cap-list reveal reveal-delay-1">
+    <div class="cap-item">
+      <div class="cap-dot teal"></div>
+      <span class="cap-text">On-set LIDAR & photogrammetry capture</span>
+      <span class="cap-badge">On location</span>
+    </div>
+    <div class="cap-item">
+      <div class="cap-dot gold"></div>
+      <span class="cap-text">RealityCapture processing & asset pipeline</span>
+      <span class="cap-badge">Full pipeline</span>
+    </div>
+    <div class="cap-item">
+      <div class="cap-dot teal"></div>
+      <span class="cap-text">Unreal Engine 5 — cinematics, previs & tools</span>
+      <span class="cap-badge">Real-time</span>
+    </div>
+    <div class="cap-item">
+      <div class="cap-dot coral"></div>
+      <span class="cap-text">VFX — compositing, shaders, FX & materials</span>
+      <span class="cap-badge">Pipeline</span>
+    </div>
+    <div class="cap-item">
+      <div class="cap-dot gold"></div>
+      <span class="cap-text">PCG procedural environment tools</span>
+      <span class="cap-badge">In development</span>
+    </div>
+  </div>
+</section>
+
+<!-- ── S3: WORK ── -->
+<section id="s3">
+  <div class="work-header">
+    <h2 class="work-title">Selected <em>Work</em></h2>
+    <span class="work-count">Dune · Blade Runner · Alien Us · The Forest</span>
+  </div>
+
+  <!-- DUNE -->
+  <div class="project-row reveal">
+    <div class="proj-bg" style="background-image:url('https://static.wixstatic.com/media/b97032_2b715d5f42a4462c86188821fc02a247f002.jpg/v1/fill/w_160,h_90,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/b97032_2b715d5f42a4462c86188821fc02a247f002.jpg'); background-color:#1c1408;"></div>
+    <div class="proj-grad"></div>
+    <div class="proj-accent" style="background: var(--gold);"></div>
+    <div class="proj-info">
+      <div class="proj-left">
+        <p class="proj-cat" style="color:var(--gold)">Cinematic Breakdown · UE5</p>
+        <h3 class="proj-title">Dune</h3>
+        <p class="proj-sub">Desert environment · Atmosphere · Volumetric lighting · Camera animation</p>
+      </div>
+      <div class="proj-tags">
+        <span class="proj-tag">Lumen</span>
+        <span class="proj-tag">Nanite</span>
+        <span class="proj-tag">Sequencer</span>
+      </div>
+    </div>
+  </div>
+  <div class="proj-divider"></div>
+
+  <!-- BLADE RUNNER -->
+  <div class="project-row reveal">
+    <div class="proj-bg" style="background-image:url('https://static.wixstatic.com/media/b97032_4a6341a3c82742e5acafc02a97213b6bf000.jpg/v1/fill/w_160,h_90,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/b97032_4a6341a3c82742e5acafc02a97213b6bf000.jpg'); background-color:#080c12;"></div>
+    <div class="proj-grad"></div>
+    <div class="proj-accent" style="background: var(--ice);"></div>
+    <div class="proj-info">
+      <div class="proj-left">
+        <p class="proj-cat" style="color:var(--ice)">Cinematic Breakdown · UE5</p>
+        <h3 class="proj-title">Blade Runner</h3>
+        <p class="proj-sub">Neon city · Rain FX · Volumetrics · Mood lighting</p>
+      </div>
+      <div class="proj-tags">
+        <span class="proj-tag">Rain FX</span>
+        <span class="proj-tag">Neon Shaders</span>
+        <span class="proj-tag">Cinematography</span>
+      </div>
+    </div>
+  </div>
+  <div class="proj-divider"></div>
+
+  <!-- ALIEN US -->
+  <div class="project-row reveal">
+    <div class="proj-bg" style="background-image:url('https://static.wixstatic.com/media/b97032_8de76c7e63fb451b943ec28c3747585df002.jpg/v1/fill/w_160,h_90,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/b97032_8de76c7e63fb451b943ec28c3747585df002.jpg'); background-color:#0a0c0a;"></div>
+    <div class="proj-grad"></div>
+    <div class="proj-accent" style="background: var(--teal);"></div>
+    <div class="proj-info">
+      <div class="proj-left">
+        <p class="proj-cat" style="color:var(--teal)">Cinematic Breakdown · UE5</p>
+        <h3 class="proj-title">Alien Us</h3>
+        <p class="proj-sub">Creature atmosphere · Tension · Environmental FX</p>
+      </div>
+      <div class="proj-tags">
+        <span class="proj-tag">Atmosphere</span>
+        <span class="proj-tag">FX</span>
+        <span class="proj-tag">Tension</span>
+      </div>
+    </div>
+  </div>
+  <div class="proj-divider"></div>
+
+  <!-- THE FOREST -->
+  <div class="project-row reveal">
+    <div class="proj-bg" style="background: linear-gradient(135deg,#0c1208,#0a1010);"></div>
+    <div class="proj-grad"></div>
+    <div class="proj-accent" style="background: var(--coral);"></div>
+    <div class="proj-info">
+      <div class="proj-left">
+        <p class="proj-cat" style="color:var(--coral)">In Production · 2026 · UE5</p>
+        <h3 class="proj-title">The Forest</h3>
+        <p class="proj-sub">PCG environment · Volumetric fog · Procedural detail</p>
+      </div>
+      <div class="proj-tags">
+        <span class="proj-wip">In Production · 2026</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── GALLERY ── -->
+<section id="gallery">
+  <div class="gallery-header">
+    <h2 class="gallery-title">Renders & <em>Gallery</em></h2>
+    <span class="gallery-sub">Images · Stills · Behind the Work</span>
+  </div>
+
+  <!-- Showreel video -->
+  <div class="gallery-grid" style="margin-bottom:4px;">
+    <div class="gallery-video-wrap">
+      <iframe src="https://www.youtube.com/embed?listType=user_uploads&list=eliasrodriguezgallardo2244" allowfullscreen title="Elias Rodriguez Showreel"></iframe>
+      <span class="gallery-video-label">Showreel — YouTube</span>
+    </div>
+  </div>
+
+  <div class="gallery-filters">
+    <button class="gfilter active" data-gfilter="all">All</button>
+    <button class="gfilter" data-gfilter="ue5">Unreal Engine</button>
+    <button class="gfilter" data-gfilter="vfx">VFX</button>
+    <button class="gfilter" data-gfilter="env">Environments</button>
+    <button class="gfilter" data-gfilter="fx">FX & Shaders</button>
+  </div>
+
+  <div class="gallery-grid">
+
+    <div class="gallery-item wide reveal" data-gtag="ue5">
+      <img src="https://static.wixstatic.com/media/b97032_51ad4e7e60b448f88762526ca84882c4~mv2.png/v1/fill/w_980,h_551,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/Space_ship_door_opening_0179.png" alt="Spaceship Interior UE5">
+      <div class="gallery-item-overlay">
+        <div><div class="gallery-item-label">Spaceship Interior</div><div class="gallery-item-sub">Unreal Engine 5 · Cinematic</div></div>
+      </div>
+    </div>
+
+    <div class="gallery-item reveal" data-gtag="ue5">
+      <img src="https://static.wixstatic.com/media/b97032_4f2d1a6b5e7c4bbfba710e1803c84311~mv2.png/v1/crop/x_936,y_0,w_833,h_1080/fill/w_425,h_551,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Space_ship_door_opening_0468.png" alt="Spaceship Door">
+      <div class="gallery-item-overlay">
+        <div><div class="gallery-item-label">Spaceship Door Opening</div><div class="gallery-item-sub">UE5 · Lighting</div></div>
+      </div>
+    </div>
+
+    <div class="gallery-item reveal" data-gtag="ue5 vfx">
+      <img src="https://static.wixstatic.com/media/b97032_467ce5c5376f473abe5a8073ebfaa84d~mv2.png/v1/crop/x_510,y_0,w_899,h_1080/fill/w_459,h_551,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Space_ship_door_opening_0082.png" alt="Spaceship Frame">
+      <div class="gallery-item-overlay">
+        <div><div class="gallery-item-label">Spaceship — Frame 82</div><div class="gallery-item-sub">UE5 · Atmosphere</div></div>
+      </div>
+    </div>
+
+    <div class="gallery-item reveal" data-gtag="vfx fx">
+      <img src="https://static.wixstatic.com/media/b97032_7cdddf5da89f4ccb850cacea6c35336d~mv2.jpg/v1/fill/w_980,h_551,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Fire_Power.jpg" alt="Fire Power VFX">
+      <div class="gallery-item-overlay">
+        <div><div class="gallery-item-label">Fire Power</div><div class="gallery-item-sub">Real-time VFX · FX</div></div>
+      </div>
+    </div>
+
+    <div class="gallery-item wide reveal" data-gtag="ue5 vfx">
+      <img src="https://static.wixstatic.com/media/b97032_890dae98a504416eafcc0b6f5ab54a01~mv2.png/v1/fill/w_980,h_551,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/Space_ship_door_opening_0317.png" alt="Spaceship Frame 317">
+      <div class="gallery-item-overlay">
+        <div><div class="gallery-item-label">Spaceship — Frame 317</div><div class="gallery-item-sub">UE5 · Camera Cinematic</div></div>
+      </div>
+    </div>
+
+    <div class="gallery-item reveal" data-gtag="env ue5">
+      <img src="https://static.wixstatic.com/media/b97032_5d93a77013a342cdafb863ebdb823588f001.jpg/v1/fill/w_160,h_90,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/b97032_5d93a77013a342cdafb863ebdb823588f001.jpg" alt="Scape Island">
+      <div class="gallery-item-overlay">
+        <div><div class="gallery-item-label">Scape Island</div><div class="gallery-item-sub">Environment · Landscape</div></div>
+      </div>
+    </div>
+
+    <div class="gallery-item reveal" data-gtag="env ue5">
+      <img src="https://static.wixstatic.com/media/b97032_7259da42a6104473829042d830195b7ff002.jpg/v1/fill/w_160,h_90,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/b97032_7259da42a6104473829042d830195b7ff002.jpg" alt="Lost City">
+      <div class="gallery-item-overlay">
+        <div><div class="gallery-item-label">Lost City</div><div class="gallery-item-sub">Environment Timelapse · UE5</div></div>
+      </div>
+    </div>
+
+    <div class="gallery-item reveal" data-gtag="fx ue5">
+      <img src="https://static.wixstatic.com/media/b97032_9720ca436184485088943f541ad25a56f001.jpg/v1/fill/w_160,h_90,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/b97032_9720ca436184485088943f541ad25a56f001.jpg" alt="Shaders and FX">
+      <div class="gallery-item-overlay">
+        <div><div class="gallery-item-label">Shaders, Materials & FX</div><div class="gallery-item-sub">UE5 · Technical</div></div>
+      </div>
+    </div>
+
+    <div class="gallery-item reveal" data-gtag="ue5 vfx">
+      <img src="https://static.wixstatic.com/media/b97032_bfbcb0aea8d946bd8f3a0d032b76958e~mv2.png/v1/crop/x_217,y_0,w_833,h_1080/fill/w_425,h_551,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Space_ship_door_opening_0483.png" alt="Spaceship Frame 483">
+      <div class="gallery-item-overlay">
+        <div><div class="gallery-item-label">Spaceship — Frame 483</div><div class="gallery-item-sub">UE5 · Lighting</div></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── BREAKDOWNS ── -->
+<section id="breakdowns">
+  <div class="breakdowns-header reveal">
+    <p class="sec-label gold">How I work</p>
+    <h2 class="breakdowns-title">Project <em>Breakdowns</em></h2>
+    <p class="breakdowns-intro">A behind-the-scenes look at how each cinematic was built — the thinking, the tools and the technical decisions that made each sequence work.</p>
+  </div>
+
+  <!-- DUNE -->
+  <div class="breakdown-card reveal">
+    <div class="breakdown-img">
+      <img src="https://static.wixstatic.com/media/b97032_2b715d5f42a4462c86188821fc02a247f002.jpg/v1/fill/w_160,h_90,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/b97032_2b715d5f42a4462c86188821fc02a247f002.jpg" alt="Dune Breakdown">
+    </div>
+    <div class="breakdown-body">
+      <p class="breakdown-num" style="color:var(--gold)">Breakdown 01</p>
+      <h3 class="breakdown-title" style="color:var(--dark)">Dune</h3>
+      <p class="breakdown-desc">Recreating the vast, hostile desert environment of Arrakis inside Unreal Engine 5 — focusing on scale, atmosphere and the characteristic golden haze of the source material.</p>
+      <div class="breakdown-steps">
+        <div class="bd-step"><div class="bd-step-dot" style="background:var(--gold)"></div><span class="bd-step-text">Built large-scale terrain using Landscape tools and Nanite-displaced meshes to achieve real sense of scale</span></div>
+        <div class="bd-step"><div class="bd-step-dot" style="background:var(--gold)"></div><span class="bd-step-text">Volumetric fog and Lumen sky atmosphere layered to create the iconic Arrakis dust haze</span></div>
+        <div class="bd-step"><div class="bd-step-dot" style="background:var(--gold)"></div><span class="bd-step-text">Camera animation in Sequencer — low, wide shots to emphasise the desert's scale against the characters</span></div>
+        <div class="bd-step"><div class="bd-step-dot" style="background:var(--gold)"></div><span class="bd-step-text">Custom sand shader with wind-driven surface detail and subsurface scattering on dune edges</span></div>
+      </div>
+      <div class="breakdown-tags">
+        <span class="bd-tag">Landscape</span><span class="bd-tag">Nanite</span><span class="bd-tag">Lumen</span><span class="bd-tag">Volumetrics</span><span class="bd-tag">Sequencer</span>
+      </div>
+      <div class="breakdown-tools">
+        <span class="bd-tool-label">Tools</span>
+        <span class="bd-tool">Unreal Engine 5</span><span class="bd-tool">Sequencer</span><span class="bd-tool">Lumen</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- BLADE RUNNER -->
+  <div class="breakdown-card flip reveal">
+    <div class="breakdown-img">
+      <img src="https://static.wixstatic.com/media/b97032_4a6341a3c82742e5acafc02a97213b6bf000.jpg/v1/fill/w_160,h_90,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/b97032_4a6341a3c82742e5acafc02a97213b6bf000.jpg" alt="Blade Runner Breakdown">
+    </div>
+    <div class="breakdown-body">
+      <p class="breakdown-num" style="color:var(--ice)">Breakdown 02</p>
+      <h3 class="breakdown-title" style="color:var(--dark)">Blade Runner</h3>
+      <p class="breakdown-desc">A neo-noir cityscape built in UE5 — capturing the cold, rain-soaked atmosphere of Blade Runner's dystopian Los Angeles through volumetric lighting, custom neon shaders and dynamic rain FX.</p>
+      <div class="breakdown-steps">
+        <div class="bd-step"><div class="bd-step-dot" style="background:var(--ice)"></div><span class="bd-step-text">Modular city block system built in UE5 — dressed and stacked to create the layered urban density of the source</span></div>
+        <div class="bd-step"><div class="bd-step-dot" style="background:var(--ice)"></div><span class="bd-step-text">Custom emissive neon shader with bloom and lens flare — colour-graded to the blue/orange palette of the film</span></div>
+        <div class="bd-step"><div class="bd-step-dot" style="background:var(--ice)"></div><span class="bd-step-text">Rain FX system using Niagara — surface wetness material blended dynamically on geometry</span></div>
+        <div class="bd-step"><div class="bd-step-dot" style="background:var(--ice)"></div><span class="bd-step-text">Volumetric fog layers at multiple heights to create the layered smog atmosphere</span></div>
+      </div>
+      <div class="breakdown-tags">
+        <span class="bd-tag">Niagara FX</span><span class="bd-tag">Custom Shaders</span><span class="bd-tag">Emissive</span><span class="bd-tag">Volumetrics</span>
+      </div>
+      <div class="breakdown-tools">
+        <span class="bd-tool-label">Tools</span>
+        <span class="bd-tool">UE5</span><span class="bd-tool">Niagara</span><span class="bd-tool">Material Editor</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ALIEN US -->
+  <div class="breakdown-card reveal">
+    <div class="breakdown-img">
+      <img src="https://static.wixstatic.com/media/b97032_8de76c7e63fb451b943ec28c3747585df002.jpg/v1/fill/w_160,h_90,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/b97032_8de76c7e63fb451b943ec28c3747585df002.jpg" alt="Alien Us Breakdown">
+    </div>
+    <div class="breakdown-body">
+      <p class="breakdown-num" style="color:var(--teal)">Breakdown 03</p>
+      <h3 class="breakdown-title" style="color:var(--dark)">Alien Us</h3>
+      <p class="breakdown-desc">Building dread through atmosphere — Alien Us was an exercise in restraint. Dark, claustrophobic environments where lighting and FX do the storytelling, not the geometry.</p>
+      <div class="breakdown-steps">
+        <div class="bd-step"><div class="bd-step-dot" style="background:var(--teal)"></div><span class="bd-step-text">Tight, industrial corridor environments built with modular hard-surface kits — dressed with Megascans detail</span></div>
+        <div class="bd-step"><div class="bd-step-dot" style="background:var(--teal)"></div><span class="bd-step-text">Lighting pushed to near-black — single practical light sources with heavy Lumen indirect bounce for tension</span></div>
+        <div class="bd-step"><div class="bd-step-dot" style="background:var(--teal)"></div><span class="bd-step-text">Atmospheric particle systems — dust motes, steam leaks and condensation added through Niagara</span></div>
+        <div class="bd-step"><div class="bd-step-dot" style="background:var(--teal)"></div><span class="bd-step-text">Camera work deliberately slow and deliberate — handheld feel simulated through Sequencer camera rigs</span></div>
+      </div>
+      <div class="breakdown-tags">
+        <span class="bd-tag">Hard Surface</span><span class="bd-tag">Megascans</span><span class="bd-tag">Niagara</span><span class="bd-tag">Lumen</span>
+      </div>
+      <div class="breakdown-tools">
+        <span class="bd-tool-label">Tools</span>
+        <span class="bd-tool">UE5</span><span class="bd-tool">Niagara</span><span class="bd-tool">Megascans</span><span class="bd-tool">Sequencer</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- UE WORKFLOWS -->
+  <div class="breakdown-card flip reveal">
+    <div class="breakdown-img">
+      <img src="https://static.wixstatic.com/media/b97032_9720ca436184485088943f541ad25a56f001.jpg/v1/fill/w_160,h_90,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/b97032_9720ca436184485088943f541ad25a56f001.jpg" alt="UE5 Technical Workflows">
+    </div>
+    <div class="breakdown-body">
+      <p class="breakdown-num" style="color:var(--coral)">Breakdown 04</p>
+      <h3 class="breakdown-title" style="color:var(--dark)">Shaders, FX & Blueprints</h3>
+      <p class="breakdown-desc">Technical deep-dive into the real-time tools that underpin all the cinematic work — custom materials, Niagara FX systems and Blueprint logic built from scratch in UE5.</p>
+      <div class="breakdown-steps">
+        <div class="bd-step"><div class="bd-step-dot" style="background:var(--coral)"></div><span class="bd-step-text">Custom material functions built in the UE5 Material Editor — reusable, parameter-driven and artist-friendly</span></div>
+        <div class="bd-step"><div class="bd-step-dot" style="background:var(--coral)"></div><span class="bd-step-text">Niagara particle systems for fire, smoke, dust, steam and environmental atmosphere</span></div>
+        <div class="bd-step"><div class="bd-step-dot" style="background:var(--coral)"></div><span class="bd-step-text">Blueprint tools to automate repetitive tasks and give artists in-editor controls without touching code</span></div>
+        <div class="bd-step"><div class="bd-step-dot" style="background:var(--coral)"></div><span class="bd-step-text">Python scripting for pipeline automation — batch operations, asset management and workflow tooling</span></div>
+      </div>
+      <div class="breakdown-tags">
+        <span class="bd-tag">Material Editor</span><span class="bd-tag">Niagara</span><span class="bd-tag">Blueprints</span><span class="bd-tag">Python</span>
+      </div>
+      <div class="breakdown-tools">
+        <span class="bd-tool-label">Tools</span>
+        <span class="bd-tool">UE5</span><span class="bd-tool">Material Editor</span><span class="bd-tool">Niagara</span><span class="bd-tool">Python</span>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<!-- ── LIDAR & CAPTURE ── -->
+<section id="s4">
+  <div class="lidar-top">
+    <div class="reveal">
+      <p class="sec-label teal">On-set capability</p>
+      <h2 class="sec-heading" style="color:var(--text)">
+        LIDAR & Photogrammetry —
+        <em style="color:var(--teal)">the full pipeline.</em>
+      </h2>
+    </div>
+    <div class="reveal reveal-delay-1">
+      <p class="lidar-body">
+        I've carried out <strong>LIDAR scanning and photogrammetry</strong> on real film productions — capturing sets, environments, vehicles, props and cast on location. That raw data is then processed and cleaned in <strong>RealityCapture</strong>, polygons optimised, and exported into <strong>Blender or Unreal Engine 5</strong> — giving you production-ready assets and a fully navigable virtual set.
+      </p>
+    </div>
+  </div>
+
+  <div class="pipeline-steps reveal">
+    <div class="pipe-step">
+      <div class="pipe-step-color" style="background:var(--teal)"></div>
+      <p class="pipe-num">Step 01</p>
+      <h4 class="pipe-title">On-Set Capture</h4>
+      <p class="pipe-desc">LIDAR scanning and photogrammetry on location — sets, environments, vehicles, props and cast captured with production-grade precision.</p>
+      <span class="pipe-tool" style="background:rgba(62,207,178,.1);color:var(--teal);border:1px solid rgba(62,207,178,.25)">LIDAR · Photogrammetry</span>
+    </div>
+    <div class="pipe-step">
+      <div class="pipe-step-color" style="background:var(--gold)"></div>
+      <p class="pipe-num">Step 02</p>
+      <h4 class="pipe-title">RealityCapture</h4>
+      <p class="pipe-desc">Raw scan data processed in RealityCapture — point clouds meshed, cleaned, texture-baked and polygon count reduced for real-time use.</p>
+      <span class="pipe-tool" style="background:rgba(212,168,83,.1);color:var(--gold);border:1px solid rgba(212,168,83,.25)">RealityCapture</span>
+    </div>
+    <div class="pipe-step">
+      <div class="pipe-step-color" style="background:var(--coral)"></div>
+      <p class="pipe-num">Step 03</p>
+      <h4 class="pipe-title">Blender / UE5</h4>
+      <p class="pipe-desc">Optimised assets exported into Blender for any final cleanup, then brought into Unreal Engine 5 — lit, dressed and ready for real-time use.</p>
+      <span class="pipe-tool" style="background:rgba(232,105,74,.1);color:var(--coral);border:1px solid rgba(232,105,74,.25)">Blender · Unreal Engine 5</span>
+    </div>
+    <div class="pipe-step">
+      <div class="pipe-step-color" style="background:var(--ice)"></div>
+      <p class="pipe-num">Step 04</p>
+      <h4 class="pipe-title">Virtual Scene</h4>
+      <p class="pipe-desc">Scanned assets placed in UE5 — the real set recreated as a fully navigable virtual environment, lit and populated with scanned cast and props.</p>
+      <span class="pipe-tool" style="background:rgba(122,184,212,.1);color:var(--ice);border:1px solid rgba(122,184,212,.25)">Virtual Production</span>
+    </div>
+    <div class="pipe-step">
+      <div class="pipe-step-color" style="background:var(--text)"></div>
+      <p class="pipe-num">Step 05</p>
+      <h4 class="pipe-title">Previs & Review</h4>
+      <p class="pipe-desc">Director and DOP explore every shot in real time — every lens, every camera move previsualized with real location data before principal photography.</p>
+      <span class="pipe-tool" style="background:rgba(244,241,236,.06);color:var(--muted);border:1px solid rgba(244,241,236,.12)">Previs · Shot Review</span>
+    </div>
+  </div>
+
+  <div class="lidar-note reveal">
+    <div class="lidar-note-bar"></div>
+    <p class="lidar-note-text">
+      This is a <strong>complete end-to-end pipeline</strong> I know from hands-on production experience — from arriving on set with scanning equipment, all the way through to a virtual production environment a DOP can explore shot by shot.
+    </p>
+  </div>
+</section>
+
+<!-- ── S5: SKILLS ── -->
+<section id="s5">
+  <div class="skills-top reveal">
+    <h2 class="skills-heading" style="color:var(--dark)">Skills & <em>Capabilities</em></h2>
+    <p class="sec-label gold" style="margin:0">Available for hire — London</p>
+  </div>
+
+  <div class="skills-grid">
+    <div class="skill-card s-teal reveal">
+      <div class="skill-card-top-bar" style="background:var(--teal)"></div>
+      <div class="skill-card-num">01</div>
+      <h4 class="skill-card-title">Unreal Engine 5</h4>
+      <div class="skill-list">
+        <span class="skill-li">Sequencer & camera animation</span>
+        <span class="skill-li">Lumen & Nanite rendering</span>
+        <span class="skill-li">Blueprints & real-time systems</span>
+        <span class="skill-li">PCG procedural tools</span>
+        <span class="skill-li">Virtual production pipeline</span>
+      </div>
+    </div>
+
+    <div class="skill-card s-gold reveal reveal-delay-1">
+      <div class="skill-card-top-bar" style="background:var(--gold)"></div>
+      <div class="skill-card-num">02</div>
+      <h4 class="skill-card-title">On-Set Capture</h4>
+      <div class="skill-list">
+        <span class="skill-li">LIDAR scanning — sets & environments</span>
+        <span class="skill-li">Photogrammetry — cast, props & vehicles</span>
+        <span class="skill-li">RealityCapture processing & cleanup</span>
+        <span class="skill-li">Polygon reduction & LOD optimisation</span>
+        <span class="skill-li">Scan-to-scene full pipeline</span>
+      </div>
+    </div>
+
+    <div class="skill-card s-coral reveal reveal-delay-2">
+      <div class="skill-card-top-bar" style="background:var(--coral)"></div>
+      <div class="skill-card-num">03</div>
+      <h4 class="skill-card-title">VFX & Pipeline</h4>
+      <div class="skill-list">
+        <span class="skill-li">Compositing</span>
+        <span class="skill-li">Shaders & materials</span>
+        <span class="skill-li">FX & particle systems</span>
+        <span class="skill-li">Python tool development</span>
+        <span class="skill-li">3D modelling & lighting</span>
+      </div>
+    </div>
+
+    <div class="skill-card s-teal reveal reveal-delay-3">
+      <div class="skill-card-top-bar" style="background:var(--ice)"></div>
+      <div class="skill-card-num">04</div>
+      <h4 class="skill-card-title">Cinematics</h4>
+      <div class="skill-list">
+        <span class="skill-li" style="--dot-color:var(--ice)">Camera animation & shot blocking</span>
+        <span class="skill-li">Cinematography & lens work</span>
+        <span class="skill-li">Previs for film & episodic</span>
+        <span class="skill-li">Atmospheric lighting</span>
+        <span class="skill-li">Motion blur & depth of field</span>
+      </div>
+    </div>
+
+    <div class="skill-card s-gold reveal reveal-delay-1">
+      <div class="skill-card-top-bar" style="background:#bbb5af"></div>
+      <div class="skill-card-num">05</div>
+      <h4 class="skill-card-title">Generalist</h4>
+      <div class="skill-list">
+        <span class="skill-li">Cross-department collaboration</span>
+        <span class="skill-li">Photography — composition & light</span>
+        <span class="skill-li">Environment art</span>
+        <span class="skill-li">Real-time & offline rendering</span>
+        <span class="skill-li">Adapts fast to any pipeline</span>
+      </div>
+    </div>
+
+    <div class="skill-card quote-card reveal reveal-delay-2">
+      <div class="skill-card-top-bar" style="background:linear-gradient(to right,var(--teal),var(--gold))"></div>
+      <p class="quote-text">"From scanning the set to the DOP seeing their shot — I cover the <span>whole pipeline.</span>"</p>
+      <a href="#s6" style="font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--teal);margin-top:32px;display:inline-flex;align-items:center;gap:8px;">Get in touch →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── S6: CONTACT ── -->
+<section id="s6">
+  <div class="contact-bg"></div>
+  <div class="contact-overlay"></div>
+  <div class="contact-colorbar"></div>
+  <div class="contact-content reveal">
+    <p class="contact-label">Available for hire</p>
+    <h2 class="contact-heading">
+      Let's build<br>something
+      <em>film-ready.</em>
+    </h2>
+    <p class="contact-sub">Open to freelance, contract and full-time — film, VFX, games & virtual production.</p>
+    <a href="mailto:your@email.com" class="contact-email">your@email.com</a>
+    <div class="contact-btns">
+      <a href="https://www.youtube.com/@eliasrodriguezgallardo2244" target="_blank" class="cbtn teal">Watch Showreel</a>
+      <a href="https://poelias117.wixstudio.com/vfxmotion" target="_blank" class="cbtn outline">Current Site</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p class="footer-copy">© 2026 Elias Rodriguez — Technical Artist & VFX · London</p>
+  <div class="footer-links">
+    <a href="https://www.youtube.com/@eliasrodriguezgallardo2244" target="_blank">YouTube</a>
+    <a href="#s6">Contact</a>
+  </div>
+</footer>
+
+<script>
+// Gallery filter
+const gfilters = document.querySelectorAll('.gfilter');
+const gitems = document.querySelectorAll('.gallery-item[data-gtag]');
+gfilters.forEach(btn => {
+  btn.addEventListener('click', () => {
+    gfilters.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const f = btn.dataset.gfilter;
+    gitems.forEach(item => {
+      const tags = item.dataset.gtag || '';
+      item.classList.toggle('g-hidden', f !== 'all' && !tags.includes(f));
+    });
+  });
+});
+
+const revealObs = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.1 });
+document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
+</script>
+</body>
+</html>

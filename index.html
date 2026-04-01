@@ -185,8 +185,8 @@ nav {
   background: var(--light);
   color: var(--dark);
   padding: 110px 52px;
-  display: grid; grid-template-columns: 5fr 4fr; gap: 80px;
-  align-items: center;
+  display: grid; grid-template-columns: 2fr 2fr 1fr; gap: 56px;
+  align-items: start;
 }
 
 .sec-label {
@@ -563,10 +563,10 @@ footer {
 .credits-intro::before { content:''; width:20px; height:2px; background:var(--teal); flex-shrink:0; }
 
 .credits-grid {
-  display: grid; grid-template-columns: repeat(3, 1fr); gap: 3px; margin-bottom: 3px;
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 3px; margin-bottom: 0;
 }
 .credits-grid-bottom {
-  display: grid; grid-template-columns: repeat(2, 1fr); gap: 3px;
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 3px;
 }
 
 .credit-card {
@@ -905,7 +905,7 @@ footer {
     <p class="hero-role">London · Available for hire</p>
     <p class="hero-desc">A Technical Artist working across film and real-time production — on-set capture, VFX, Unreal Engine 5, procedural tools and cinematic previsualisations.</p>
     <div class="hero-btns">
-      <a href="https://www.youtube.com/watch?v=9n67Kx_WAzM" target="_blank" class="btn-teal">Watch Showreel</a>
+      <a href="https://youtu.be/Dpv45DwgldA" target="_blank" class="btn-teal">Watch Showreel</a>
       <a href="#s3" class="btn-ghost">View Work</a>
     </div>
   </div>
@@ -939,59 +939,50 @@ footer {
     <div class="credit-card reveal">
       <div class="credit-card-bar" style="background:var(--gold)"></div>
       <p class="credit-role" style="color:var(--gold)"><span class="credit-role-line" style="background:var(--gold)"></span>Capture Technician</p>
-      <h3 class="credit-title">Dune:<br>Prophecy S2</h3>
-      <p class="credit-detail">HBO · Max Series<span style="background:rgba(212,168,83,.12);color:var(--gold)">Cast · Props</span></p>
-      <div class="credit-bg-text">S2</div>
+      <h3 class="credit-title">Dune:<br>Prophecy</h3>
+      <p class="credit-detail">HBO · Max Series · 2025<span style="background:rgba(212,168,83,.12);color:var(--gold)">Cast · Props</span></p>
+      <div class="credit-bg-text">2025</div>
     </div>
     <div class="credit-card reveal">
       <div class="credit-card-bar" style="background:#9b8ecf"></div>
       <p class="credit-role" style="color:#9b8ecf"><span class="credit-role-line" style="background:#9b8ecf"></span>Unreal Engine TD</p>
-      <h3 class="credit-title">Rings of<br>Power S3</h3>
-      <p class="credit-detail">Amazon MGM Studios · Just wrapped<span style="background:rgba(155,142,207,.12);color:#9b8ecf">Studio · UE5</span></p>
-      <div class="credit-bg-text">S3</div>
+      <h3 class="credit-title">Rings of<br>Power</h3>
+      <p class="credit-detail">Amazon MGM Studios · 2026<span style="background:rgba(155,142,207,.12);color:#9b8ecf">Studio · UE5</span></p>
+      <div class="credit-bg-text">2026</div>
     </div>
-  </div>
-
-  <div class="credits-grid-bottom" style="margin-top:3px;">
     <div class="credit-card reveal">
       <div class="credit-card-bar" style="background:var(--teal)"></div>
       <p class="credit-role" style="color:var(--teal)"><span class="credit-role-line" style="background:var(--teal)"></span>Capture Technician</p>
       <h3 class="credit-title">Spider-Man:<br>Brand New Day</h3>
-      <p class="credit-detail">Marvel Studios · Sony Pictures<span style="background:rgba(62,207,178,.1);color:var(--teal)">Cast · Props</span></p>
+      <p class="credit-detail">Marvel Studios · Sony Pictures<span style="background:rgba(62,207,178,.1);color:var(--teal)">Cast</span></p>
       <div class="credit-bg-text">2026</div>
     </div>
     <div class="credit-card reveal">
       <div class="credit-card-bar" style="background:var(--ice)"></div>
       <p class="credit-role" style="color:var(--ice)"><span class="credit-role-line" style="background:var(--ice)"></span>LIDAR Capture Technician</p>
-      <h3 class="credit-title">The Wheel<br>of Time S2</h3>
-      <p class="credit-detail">Amazon Prime Video · South Africa<span style="background:rgba(122,184,212,.12);color:var(--ice)">Sets · Environments</span></p>
-      <div class="credit-bg-text">S2</div>
+      <h3 class="credit-title">The Wheel<br>of Time</h3>
+      <p class="credit-detail">Amazon Prime Video · South Africa · 2024<span style="background:rgba(122,184,212,.12);color:var(--ice)">Sets · Environments</span></p>
+      <div class="credit-bg-text">2024</div>
     </div>
-  </div>
-
-  <div class="credits-grid-bottom" style="margin-top:3px;">
     <div class="credit-card reveal">
       <div class="credit-card-bar" style="background:#7ecfb8"></div>
       <p class="credit-role" style="color:#7ecfb8"><span class="credit-role-line" style="background:#7ecfb8"></span>LIDAR Capture Technician</p>
-      <h3 class="credit-title">The Wheel<br>of Time S3</h3>
-      <p class="credit-detail">Amazon Prime Video<span style="background:rgba(126,207,184,.12);color:#7ecfb8">Sets · Environments</span></p>
-      <div class="credit-bg-text">S3</div>
+      <h3 class="credit-title">The Wheel<br>of Time</h3>
+      <p class="credit-detail">Amazon Prime Video · 2024<span style="background:rgba(126,207,184,.12);color:#7ecfb8">Sets · Environments</span></p>
+      <div class="credit-bg-text">2024</div>
     </div>
     <div class="credit-card reveal">
       <div class="credit-card-bar" style="background:#b87ecf"></div>
       <p class="credit-role" style="color:#b87ecf"><span class="credit-role-line" style="background:#b87ecf"></span>LIDAR Capture Technician</p>
       <h3 class="credit-title">The Witcher<br>Season 4</h3>
       <p class="credit-detail">Netflix · 2024<span style="background:rgba(184,126,207,.12);color:#b87ecf">Sets · Environments</span></p>
-      <div class="credit-bg-text">S4</div>
+      <div class="credit-bg-text">2024</div>
     </div>
-  </div>
-
-  <div class="credits-grid-bottom" style="margin-top:3px;">
     <div class="credit-card reveal">
       <div class="credit-card-bar" style="background:var(--coral)"></div>
       <p class="credit-role" style="color:var(--coral)"><span class="credit-role-line" style="background:var(--coral)"></span>LIDAR Capture Technician</p>
       <h3 class="credit-title">Luther:<br>The Fallen Sun</h3>
-      <p class="credit-detail">Netflix · BBC Films<span style="background:rgba(232,105,74,.12);color:var(--coral)">Sets · Environments</span></p>
+      <p class="credit-detail">Netflix · BBC Films · 2023<span style="background:rgba(232,105,74,.12);color:var(--coral)">Sets · Environments</span></p>
       <div class="credit-bg-text">2023</div>
     </div>
     <div class="credit-card reveal">
@@ -1003,7 +994,7 @@ footer {
     </div>
   </div>
 
-  <div class="credits-note">
+  <div class="credits-note" style="margin-top:3px;">
     <div class="credits-note-bar"></div>
     <p class="credits-note-text">Also: <strong>Sonic the Hedgehog 3</strong> and additional productions. Full credits available on request.</p>
   </div>
@@ -1017,8 +1008,9 @@ footer {
       Technical Artist<br>
       <em>on set & in engine</em>
     </h2>
-    <p class="about-body">
-      I bridge the gap between physical production and the virtual world. With hands-on experience scanning real film sets, environments, vehicles, props and cast — and processing that data all the way through to a navigable Unreal Engine 5 scene — I give directors and DOPs the ability to see their entire film before principal photography begins.
+    <p class="about-body">A Technical Artist working across film and real-time production — bridging physical sets and virtual worlds through on-set capture, VFX and Unreal Engine 5.</p>
+    <p class="about-body" style="margin-top:16px; font-size:14px; color:#7a7570; font-style:italic; border-left:2px solid rgba(212,168,83,.3); padding-left:16px; margin-top:24px;">
+      Some cinematic projects featured here use freely available community assets from libraries such as Fab, Quixel Megascans and the Unreal Marketplace. My focus in these projects is lighting, atmosphere, camera work, VFX and real-time pipeline — not modelling from scratch. This reflects how real productions work: using the best available resources efficiently to deliver results.
     </p>
   </div>
 
@@ -1049,63 +1041,74 @@ footer {
       <span class="cap-badge">In development</span>
     </div>
   </div>
+
+  <div class="reveal" style="position:relative; overflow:hidden; min-height:360px;">
+    <img src="https://static.wixstatic.com/media/b97032_fff6d97cd6f14f4cb4747116e0058075~mv2.jpg/v1/fill/w_980,h_994,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/IMG_9593_HEIC.jpg" alt="Elias Rodriguez" style="width:100%;height:100%;object-fit:cover;object-position:top center;filter:grayscale(.15) contrast(1.05);display:block;min-height:360px;">
+    <div style="position:absolute;bottom:0;left:0;right:0;padding:20px 24px;background:linear-gradient(to top,rgba(244,241,236,.95) 0%,transparent 100%);">
+      <p style="font-family:'Barlow Condensed',sans-serif;font-size:16px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:#0a0a0a;margin:0;">Elias Rodriguez</p>
+      <p style="font-size:12px;color:#888480;letter-spacing:.1em;text-transform:uppercase;margin:3px 0 0;">Technical Artist · London</p>
+    </div>
+  </div>
+
 </section>
 
 <!-- ── S3: WORK ── -->
 <section id="s3">
   <div class="work-header">
     <h2 class="work-title">Selected <em>Work</em></h2>
-    <span class="work-count">Dune · Blade Runner · Alien Us · The Forest</span>
+    <span class="work-count">Dune Inspired · Blade Runner Inspired · Alien Us · The Forest</span>
   </div>
 
   <!-- DUNE -->
-  <div class="project-row reveal">
-    <div class="proj-bg" style="background-image:url('https://static.wixstatic.com/media/b97032_2b715d5f42a4462c86188821fc02a247f002.jpg/v1/fill/w_160,h_90,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/b97032_2b715d5f42a4462c86188821fc02a247f002.jpg'); background-color:#1c1408;"></div>
+  <div class="project-row reveal" style="cursor:pointer;" onclick="window.open('https://youtu.be/br_vihxBinQ','_blank')">
+    <div class="proj-bg" style="background-image:url('https://img.youtube.com/vi/br_vihxBinQ/maxresdefault.jpg'); background-color:#1c1408;"></div>
     <div class="proj-grad"></div>
     <div class="proj-accent" style="background: var(--gold);"></div>
     <div class="proj-info">
       <div class="proj-left">
-        <p class="proj-cat" style="color:var(--gold)">Cinematic Breakdown · UE5</p>
-        <h3 class="proj-title">Dune</h3>
+        <p class="proj-cat" style="color:var(--gold)">UE5 Cinematic · Fan Project</p>
+        <h3 class="proj-title">Dune Inspired</h3>
         <p class="proj-sub">Desert environment · Atmosphere · Volumetric lighting · Camera animation</p>
       </div>
       <div class="proj-tags">
         <span class="proj-tag">Lumen</span>
         <span class="proj-tag">Nanite</span>
         <span class="proj-tag">Sequencer</span>
+        <span class="proj-tag">▶ Watch</span>
       </div>
     </div>
   </div>
   <div class="proj-divider"></div>
 
   <!-- BLADE RUNNER -->
-  <div class="project-row reveal">
-    <div class="proj-bg" style="background-image:url('https://static.wixstatic.com/media/b97032_4a6341a3c82742e5acafc02a97213b6bf000.jpg/v1/fill/w_160,h_90,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/b97032_4a6341a3c82742e5acafc02a97213b6bf000.jpg'); background-color:#080c12;"></div>
+  <div class="project-row reveal" style="cursor:pointer;" onclick="window.open('https://youtu.be/m-t4fhhKLN4','_blank')">
+    <div class="proj-bg" style="background-image:url('https://img.youtube.com/vi/m-t4fhhKLN4/maxresdefault.jpg'); background-color:#080c12;"></div>
     <div class="proj-grad"></div>
     <div class="proj-accent" style="background: var(--ice);"></div>
     <div class="proj-info">
       <div class="proj-left">
-        <p class="proj-cat" style="color:var(--ice)">Cinematic Breakdown · UE5</p>
-        <h3 class="proj-title">Blade Runner</h3>
+        <p class="proj-cat" style="color:var(--ice)">UE5 Cinematic · Fan Project</p>
+        <h3 class="proj-title">Blade Runner Inspired</h3>
         <p class="proj-sub">Neon city · Rain FX · Volumetrics · Mood lighting</p>
       </div>
       <div class="proj-tags">
         <span class="proj-tag">Rain FX</span>
         <span class="proj-tag">Neon Shaders</span>
         <span class="proj-tag">Cinematography</span>
+        <span class="proj-tag">▶ Watch</span>
       </div>
     </div>
   </div>
   <div class="proj-divider"></div>
 
   <!-- ALIEN US -->
-  <div class="project-row reveal">
-    <div class="proj-bg" style="background-image:url('https://static.wixstatic.com/media/b97032_8de76c7e63fb451b943ec28c3747585df002.jpg/v1/fill/w_160,h_90,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/b97032_8de76c7e63fb451b943ec28c3747585df002.jpg'); background-color:#0a0c0a;"></div>
+  <div class="project-row reveal" style="cursor:pointer;" onclick="window.open('https://youtu.be/9YtSjdnmG90','_blank')">
+    <div class="proj-bg" style="background-image:url('https://img.youtube.com/vi/9YtSjdnmG90/maxresdefault.jpg'); background-color:#0a0c0a;"></div>
     <div class="proj-grad"></div>
     <div class="proj-accent" style="background: var(--teal);"></div>
     <div class="proj-info">
       <div class="proj-left">
-        <p class="proj-cat" style="color:var(--teal)">Cinematic Breakdown · UE5</p>
+        <p class="proj-cat" style="color:var(--teal)">UE5 Cinematic · Original</p>
         <h3 class="proj-title">Alien Us</h3>
         <p class="proj-sub">Creature atmosphere · Tension · Environmental FX</p>
       </div>
@@ -1113,24 +1116,27 @@ footer {
         <span class="proj-tag">Atmosphere</span>
         <span class="proj-tag">FX</span>
         <span class="proj-tag">Tension</span>
+        <span class="proj-tag">▶ Watch</span>
       </div>
     </div>
   </div>
   <div class="proj-divider"></div>
 
   <!-- THE FOREST -->
-  <div class="project-row reveal" style="cursor:pointer;" onclick="window.open('https://youtu.be/OJmCbjEdJAc','_blank')">
-    <div class="proj-bg" style="background: linear-gradient(135deg,#0c1208,#0a1010);"></div>
+  <div class="project-row reveal" style="cursor:pointer;" onclick="window.open('https://youtu.be/h06rA4BNIUQ','_blank')">
+    <div class="proj-bg" style="background-image:url('https://img.youtube.com/vi/h06rA4BNIUQ/maxresdefault.jpg'); background-color:#0c1208; background-size:cover; background-position:center;"></div>
     <div class="proj-grad"></div>
     <div class="proj-accent" style="background: var(--coral);"></div>
     <div class="proj-info">
       <div class="proj-left">
-        <p class="proj-cat" style="color:var(--coral)">In Production · 2026 · UE5</p>
+        <p class="proj-cat" style="color:var(--coral)">UE5 · PCG Environment · Original</p>
         <h3 class="proj-title">The Forest</h3>
         <p class="proj-sub">PCG environment · Volumetric fog · Procedural detail</p>
       </div>
       <div class="proj-tags">
-        <span class="proj-wip">In Production · 2026</span>
+        <span class="proj-tag">PCG</span>
+        <span class="proj-tag">Procedural</span>
+        <span class="proj-tag">▶ Watch</span>
       </div>
     </div>
   </div>
@@ -1145,9 +1151,14 @@ footer {
 
   <!-- Showreel video -->
   <div class="gallery-grid" style="margin-bottom:4px;">
-    <div class="gallery-video-wrap">
-      <iframe src="https://www.youtube.com/embed/9n67Kx_WAzM" allowfullscreen title="Elias Rodriguez Showreel"></iframe>
-      <span class="gallery-video-label">Showreel — YouTube</span>
+    <div class="gallery-video-wrap" style="cursor:pointer; position:relative;" onclick="window.open('https://youtu.be/Dpv45DwgldA','_blank')">
+      <img src="https://img.youtube.com/vi/Dpv45DwgldA/maxresdefault.jpg" alt="Showreel" style="width:100%;height:100%;object-fit:cover;display:block;">
+      <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.35);">
+        <div style="width:80px;height:80px;border-radius:50%;background:rgba(232,105,74,.95);display:flex;align-items:center;justify-content:center;">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="white"><polygon points="9,6 20,12 9,18"/></svg>
+        </div>
+      </div>
+      <span class="gallery-video-label">Showreel 2026 — Click to Watch</span>
     </div>
   </div>
 
@@ -1197,21 +1208,21 @@ footer {
     </div>
 
     <div class="gallery-item reveal" data-gtag="env ue5">
-      <img src="https://static.wixstatic.com/media/b97032_5d93a77013a342cdafb863ebdb823588f001.jpg/v1/fill/w_160,h_90,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/b97032_5d93a77013a342cdafb863ebdb823588f001.jpg" alt="Scape Island">
+      <img src="https://static.wixstatic.com/media/b97032_5d93a77013a342cdafb863ebdb823588f001.jpg/v1/fill/w_980,h_551,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/b97032_5d93a77013a342cdafb863ebdb823588f001.jpg" alt="Scape Island">
       <div class="gallery-item-overlay">
         <div><div class="gallery-item-label">Scape Island</div><div class="gallery-item-sub">Environment · Landscape</div></div>
       </div>
     </div>
 
     <div class="gallery-item reveal" data-gtag="env ue5">
-      <img src="https://static.wixstatic.com/media/b97032_7259da42a6104473829042d830195b7ff002.jpg/v1/fill/w_160,h_90,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/b97032_7259da42a6104473829042d830195b7ff002.jpg" alt="Lost City">
+      <img src="https://static.wixstatic.com/media/b97032_7259da42a6104473829042d830195b7ff002.jpg/v1/fill/w_980,h_551,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/b97032_7259da42a6104473829042d830195b7ff002.jpg" alt="Lost City">
       <div class="gallery-item-overlay">
         <div><div class="gallery-item-label">Lost City</div><div class="gallery-item-sub">Environment Timelapse · UE5</div></div>
       </div>
     </div>
 
     <div class="gallery-item reveal" data-gtag="fx ue5">
-      <img src="https://static.wixstatic.com/media/b97032_9720ca436184485088943f541ad25a56f001.jpg/v1/fill/w_160,h_90,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/b97032_9720ca436184485088943f541ad25a56f001.jpg" alt="Shaders and FX">
+      <img src="https://static.wixstatic.com/media/b97032_9720ca436184485088943f541ad25a56f001.jpg/v1/fill/w_980,h_551,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/b97032_9720ca436184485088943f541ad25a56f001.jpg" alt="Shaders and FX">
       <div class="gallery-item-overlay">
         <div><div class="gallery-item-label">Shaders, Materials & FX</div><div class="gallery-item-sub">UE5 · Technical</div></div>
       </div>
@@ -1237,17 +1248,22 @@ footer {
 
   <!-- DUNE -->
   <div class="breakdown-card reveal">
-    <div class="breakdown-img">
-      <img src="https://static.wixstatic.com/media/b97032_2b715d5f42a4462c86188821fc02a247f002.jpg/v1/fill/w_160,h_90,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/b97032_2b715d5f42a4462c86188821fc02a247f002.jpg" alt="Dune Breakdown">
+    <div class="breakdown-img" style="position:relative; cursor:pointer;" onclick="window.open('https://youtu.be/3qWjiGNnDmA','_blank')">
+      <img src="https://img.youtube.com/vi/3qWjiGNnDmA/maxresdefault.jpg" alt="Dune Breakdown" style="width:100%;height:100%;object-fit:cover;filter:brightness(.7);">
+      <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;">
+        <div style="width:60px;height:60px;border-radius:50%;background:rgba(212,168,83,.9);display:flex;align-items:center;justify-content:center;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="white"><polygon points="9,6 20,12 9,18"/></svg>
+        </div>
+      </div>
     </div>
     <div class="breakdown-body">
       <p class="breakdown-num" style="color:var(--gold)">Breakdown 01</p>
-      <h3 class="breakdown-title" style="color:var(--dark)">Dune</h3>
+      <h3 class="breakdown-title" style="color:var(--dark)">Dune Inspired</h3>
       <p class="breakdown-desc">Recreating the vast, hostile desert environment of Arrakis inside Unreal Engine 5 — focusing on scale, atmosphere and the characteristic golden haze of the source material.</p>
       <div class="breakdown-steps">
         <div class="bd-step"><div class="bd-step-dot" style="background:var(--gold)"></div><span class="bd-step-text">Built large-scale terrain using Landscape tools and Nanite-displaced meshes to achieve real sense of scale</span></div>
         <div class="bd-step"><div class="bd-step-dot" style="background:var(--gold)"></div><span class="bd-step-text">Volumetric fog and Lumen sky atmosphere layered to create the iconic Arrakis dust haze</span></div>
-        <div class="bd-step"><div class="bd-step-dot" style="background:var(--gold)"></div><span class="bd-step-text">Camera animation in Sequencer — low, wide shots to emphasise the desert's scale against the characters</span></div>
+        <div class="bd-step"><div class="bd-step-dot" style="background:var(--gold)"></div><span class="bd-step-text">Camera animation in Sequencer — low, wide shots to emphasise the desert's scale</span></div>
         <div class="bd-step"><div class="bd-step-dot" style="background:var(--gold)"></div><span class="bd-step-text">Custom sand shader with wind-driven surface detail and subsurface scattering on dune edges</span></div>
       </div>
       <div class="breakdown-tags">
@@ -1257,17 +1273,23 @@ footer {
         <span class="bd-tool-label">Tools</span>
         <span class="bd-tool">Unreal Engine 5</span><span class="bd-tool">Sequencer</span><span class="bd-tool">Lumen</span>
       </div>
+      <a href="https://youtu.be/3qWjiGNnDmA" target="_blank" style="display:inline-flex;align-items:center;gap:8px;margin-top:20px;font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);border-bottom:1px solid rgba(212,168,83,.3);padding-bottom:3px;">Watch Breakdown →</a>
     </div>
   </div>
 
   <!-- BLADE RUNNER -->
   <div class="breakdown-card flip reveal">
-    <div class="breakdown-img">
-      <img src="https://static.wixstatic.com/media/b97032_4a6341a3c82742e5acafc02a97213b6bf000.jpg/v1/fill/w_160,h_90,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/b97032_4a6341a3c82742e5acafc02a97213b6bf000.jpg" alt="Blade Runner Breakdown">
+    <div class="breakdown-img" style="position:relative; cursor:pointer;" onclick="window.open('https://youtu.be/8owCTPZW_rk','_blank')">
+      <img src="https://img.youtube.com/vi/8owCTPZW_rk/maxresdefault.jpg" alt="Blade Runner Breakdown" style="width:100%;height:100%;object-fit:cover;filter:brightness(.7);">
+      <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;">
+        <div style="width:60px;height:60px;border-radius:50%;background:rgba(122,184,212,.9);display:flex;align-items:center;justify-content:center;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="white"><polygon points="9,6 20,12 9,18"/></svg>
+        </div>
+      </div>
     </div>
     <div class="breakdown-body">
       <p class="breakdown-num" style="color:var(--ice)">Breakdown 02</p>
-      <h3 class="breakdown-title" style="color:var(--dark)">Blade Runner</h3>
+      <h3 class="breakdown-title" style="color:var(--dark)">Blade Runner Inspired</h3>
       <p class="breakdown-desc">A neo-noir cityscape built in UE5 — capturing the cold, rain-soaked atmosphere of Blade Runner's dystopian Los Angeles through volumetric lighting, custom neon shaders and dynamic rain FX.</p>
       <div class="breakdown-steps">
         <div class="bd-step"><div class="bd-step-dot" style="background:var(--ice)"></div><span class="bd-step-text">Modular city block system built in UE5 — dressed and stacked to create the layered urban density of the source</span></div>
@@ -1282,13 +1304,19 @@ footer {
         <span class="bd-tool-label">Tools</span>
         <span class="bd-tool">UE5</span><span class="bd-tool">Niagara</span><span class="bd-tool">Material Editor</span>
       </div>
+      <a href="https://youtu.be/8owCTPZW_rk" target="_blank" style="display:inline-flex;align-items:center;gap:8px;margin-top:20px;font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--ice);border-bottom:1px solid rgba(122,184,212,.3);padding-bottom:3px;">Watch Breakdown →</a>
     </div>
   </div>
 
   <!-- ALIEN US -->
   <div class="breakdown-card reveal">
-    <div class="breakdown-img">
-      <img src="https://static.wixstatic.com/media/b97032_8de76c7e63fb451b943ec28c3747585df002.jpg/v1/fill/w_160,h_90,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/b97032_8de76c7e63fb451b943ec28c3747585df002.jpg" alt="Alien Us Breakdown">
+    <div class="breakdown-img" style="position:relative; cursor:pointer;" onclick="window.open('https://youtu.be/9YtSjdnmG90','_blank')">
+      <img src="https://img.youtube.com/vi/9YtSjdnmG90/maxresdefault.jpg" alt="Alien Us Breakdown" style="width:100%;height:100%;object-fit:cover;filter:brightness(.7);">
+      <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;">
+        <div style="width:60px;height:60px;border-radius:50%;background:rgba(62,207,178,.9);display:flex;align-items:center;justify-content:center;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="white"><polygon points="9,6 20,12 9,18"/></svg>
+        </div>
+      </div>
     </div>
     <div class="breakdown-body">
       <p class="breakdown-num" style="color:var(--teal)">Breakdown 03</p>
@@ -1298,7 +1326,7 @@ footer {
         <div class="bd-step"><div class="bd-step-dot" style="background:var(--teal)"></div><span class="bd-step-text">Tight, industrial corridor environments built with modular hard-surface kits — dressed with Megascans detail</span></div>
         <div class="bd-step"><div class="bd-step-dot" style="background:var(--teal)"></div><span class="bd-step-text">Lighting pushed to near-black — single practical light sources with heavy Lumen indirect bounce for tension</span></div>
         <div class="bd-step"><div class="bd-step-dot" style="background:var(--teal)"></div><span class="bd-step-text">Atmospheric particle systems — dust motes, steam leaks and condensation added through Niagara</span></div>
-        <div class="bd-step"><div class="bd-step-dot" style="background:var(--teal)"></div><span class="bd-step-text">Camera work deliberately slow and deliberate — handheld feel simulated through Sequencer camera rigs</span></div>
+        <div class="bd-step"><div class="bd-step-dot" style="background:var(--teal)"></div><span class="bd-step-text">Camera work deliberately slow — handheld feel simulated through Sequencer camera rigs</span></div>
       </div>
       <div class="breakdown-tags">
         <span class="bd-tag">Hard Surface</span><span class="bd-tag">Megascans</span><span class="bd-tag">Niagara</span><span class="bd-tag">Lumen</span>
@@ -1307,13 +1335,19 @@ footer {
         <span class="bd-tool-label">Tools</span>
         <span class="bd-tool">UE5</span><span class="bd-tool">Niagara</span><span class="bd-tool">Megascans</span><span class="bd-tool">Sequencer</span>
       </div>
+      <a href="https://youtu.be/9YtSjdnmG90" target="_blank" style="display:inline-flex;align-items:center;gap:8px;margin-top:20px;font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--teal);border-bottom:1px solid rgba(62,207,178,.3);padding-bottom:3px;">Watch Breakdown →</a>
     </div>
   </div>
 
   <!-- UE WORKFLOWS -->
   <div class="breakdown-card flip reveal">
-    <div class="breakdown-img">
-      <img src="https://static.wixstatic.com/media/b97032_9720ca436184485088943f541ad25a56f001.jpg/v1/fill/w_160,h_90,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/b97032_9720ca436184485088943f541ad25a56f001.jpg" alt="UE5 Technical Workflows">
+    <div class="breakdown-img" style="position:relative; cursor:pointer;" onclick="window.open('https://youtu.be/dzOHrbVTyx0','_blank')">
+      <img src="https://img.youtube.com/vi/dzOHrbVTyx0/maxresdefault.jpg" alt="Shaders FX Blueprints" style="width:100%;height:100%;object-fit:cover;filter:brightness(.7);">
+      <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;">
+        <div style="width:60px;height:60px;border-radius:50%;background:rgba(232,105,74,.9);display:flex;align-items:center;justify-content:center;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="white"><polygon points="9,6 20,12 9,18"/></svg>
+        </div>
+      </div>
     </div>
     <div class="breakdown-body">
       <p class="breakdown-num" style="color:var(--coral)">Breakdown 04</p>
@@ -1332,12 +1366,73 @@ footer {
         <span class="bd-tool-label">Tools</span>
         <span class="bd-tool">UE5</span><span class="bd-tool">Material Editor</span><span class="bd-tool">Niagara</span><span class="bd-tool">Python</span>
       </div>
+      <a href="https://youtu.be/dzOHrbVTyx0" target="_blank" style="display:inline-flex;align-items:center;gap:8px;margin-top:20px;font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--coral);border-bottom:1px solid rgba(232,105,74,.3);padding-bottom:3px;">Watch Breakdown →</a>
+    </div>
+  </div>
+
+  <!-- THE FOREST PCG -->
+  <div class="breakdown-card reveal">
+    <div class="breakdown-img" style="position:relative; cursor:pointer;" onclick="window.open('https://youtu.be/OJmCbjEdJAc','_blank')">
+      <img src="https://img.youtube.com/vi/OJmCbjEdJAc/maxresdefault.jpg" alt="The Forest PCG" style="width:100%;height:100%;object-fit:cover;filter:brightness(.7);">
+      <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;">
+        <div style="width:60px;height:60px;border-radius:50%;background:rgba(232,105,74,.9);display:flex;align-items:center;justify-content:center;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="white"><polygon points="9,6 20,12 9,18"/></svg>
+        </div>
+      </div>
+    </div>
+    <div class="breakdown-body">
+      <p class="breakdown-num" style="color:var(--coral)">Breakdown 05</p>
+      <h3 class="breakdown-title" style="color:var(--dark)">The Forest — PCG</h3>
+      <p class="breakdown-desc">A procedurally generated forest environment built entirely with UE5's PCG framework — exploring how to create dense, believable natural environments at scale without manual placement.</p>
+      <div class="breakdown-steps">
+        <div class="bd-step"><div class="bd-step-dot" style="background:var(--coral)"></div><span class="bd-step-text">PCG graph built in UE5 to scatter and distribute foliage, rocks and ground detail procedurally across the terrain</span></div>
+        <div class="bd-step"><div class="bd-step-dot" style="background:var(--coral)"></div><span class="bd-step-text">Randomised FX system — atmospheric particles, mist and light shafts scattered non-destructively through the environment</span></div>
+        <div class="bd-step"><div class="bd-step-dot" style="background:var(--coral)"></div><span class="bd-step-text">Volumetric fog and Lumen lighting to create depth and mood through the forest canopy</span></div>
+        <div class="bd-step"><div class="bd-step-dot" style="background:var(--coral)"></div><span class="bd-step-text">Cinematic camera sequence through the environment — showcasing scale, atmosphere and real-time rendering quality</span></div>
+      </div>
+      <div class="breakdown-tags">
+        <span class="bd-tag">PCG Framework</span><span class="bd-tag">Procedural</span><span class="bd-tag">Niagara FX</span><span class="bd-tag">Lumen</span><span class="bd-tag">Environment Art</span>
+      </div>
+      <div class="breakdown-tools">
+        <span class="bd-tool-label">Tools</span>
+        <span class="bd-tool">UE5</span><span class="bd-tool">PCG</span><span class="bd-tool">Niagara</span><span class="bd-tool">Lumen</span>
+      </div>
+      <a href="https://youtu.be/OJmCbjEdJAc" target="_blank" style="display:inline-flex;align-items:center;gap:8px;margin-top:20px;font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--coral);border-bottom:1px solid rgba(232,105,74,.3);padding-bottom:3px;">Watch Breakdown →</a>
+    </div>
+  </div>
+
+  <!-- SCAPLAND -->
+  <div class="breakdown-card flip reveal">
+    <div class="breakdown-img" style="position:relative; cursor:pointer;" onclick="window.open('https://youtu.be/5EkXoxbgWC4','_blank')">
+      <img src="https://img.youtube.com/vi/5EkXoxbgWC4/maxresdefault.jpg" alt="Scapland Breakdown" style="width:100%;height:100%;object-fit:cover;filter:brightness(.7);">
+      <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;">
+        <div style="width:60px;height:60px;border-radius:50%;background:rgba(122,184,212,.9);display:flex;align-items:center;justify-content:center;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="white"><polygon points="9,6 20,12 9,18"/></svg>
+        </div>
+      </div>
+    </div>
+    <div class="breakdown-body">
+      <p class="breakdown-num" style="color:var(--ice)">Breakdown 06</p>
+      <h3 class="breakdown-title" style="color:var(--dark)">Scapland</h3>
+      <p class="breakdown-desc">A real-time environment built in Unreal Engine 5 — exploring large-scale landscape design, atmospheric lighting and the kind of environmental storytelling that makes a scene feel lived-in.</p>
+      <div class="breakdown-steps">
+        <div class="bd-step"><div class="bd-step-dot" style="background:var(--ice)"></div><span class="bd-step-text">Large-scale landscape built and sculpted using UE5 Landscape tools with layered material blending</span></div>
+        <div class="bd-step"><div class="bd-step-dot" style="background:var(--ice)"></div><span class="bd-step-text">Atmospheric lighting system — sky atmosphere, volumetric clouds and directional light to create cinematic mood</span></div>
+        <div class="bd-step"><div class="bd-step-dot" style="background:var(--ice)"></div><span class="bd-step-text">Environment dressing with foliage, water and detail passes to give the scene depth and believability</span></div>
+        <div class="bd-step"><div class="bd-step-dot" style="background:var(--ice)"></div><span class="bd-step-text">Camera sequence built in Sequencer to showcase the environment from the most impactful angles</span></div>
+      </div>
+      <div class="breakdown-tags">
+        <span class="bd-tag">Landscape</span><span class="bd-tag">Sky Atmosphere</span><span class="bd-tag">Lumen</span><span class="bd-tag">Foliage</span><span class="bd-tag">Environment Art</span>
+      </div>
+      <div class="breakdown-tools">
+        <span class="bd-tool-label">Tools</span>
+        <span class="bd-tool">UE5</span><span class="bd-tool">Landscape</span><span class="bd-tool">Lumen</span><span class="bd-tool">Sequencer</span>
+      </div>
+      <a href="https://youtu.be/5EkXoxbgWC4" target="_blank" style="display:inline-flex;align-items:center;gap:8px;margin-top:20px;font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--ice);border-bottom:1px solid rgba(122,184,212,.3);padding-bottom:3px;">Watch Breakdown →</a>
     </div>
   </div>
 
 </section>
-
-<!-- ── LIDAR & CAPTURE ── -->
 <section id="s4">
   <div class="lidar-top">
     <div class="reveal">

@@ -274,7 +274,7 @@ nav {
 }
 
 .project-row {
-  height: 82vh; min-height: 480px;
+  height: 52vh; min-height: 320px;
   position: relative; overflow: hidden; display: flex; align-items: flex-end;
 }
 .proj-bg {
@@ -304,7 +304,7 @@ nav {
 }
 .proj-title {
   font-family: 'Barlow Condensed', sans-serif;
-  font-size: clamp(48px, 7vw, 100px);
+  font-size: clamp(36px, 5vw, 72px);
   font-weight: 700; text-transform: uppercase;
   line-height: .9; color: var(--text); letter-spacing: -.01em;
 }
@@ -1140,6 +1140,26 @@ footer {
       </div>
     </div>
   </div>
+  <div class="proj-divider"></div>
+
+  <!-- SCAPE ISLAND -->
+  <div class="project-row reveal" style="cursor:pointer;" onclick="window.open('https://youtu.be/DLXuBiDCwRw','_blank')">
+    <div class="proj-bg" style="background-image:url('https://img.youtube.com/vi/DLXuBiDCwRw/maxresdefault.jpg'); background-color:#080f12; background-size:cover; background-position:center;"></div>
+    <div class="proj-grad"></div>
+    <div class="proj-accent" style="background: var(--ice);"></div>
+    <div class="proj-info">
+      <div class="proj-left">
+        <p class="proj-cat" style="color:var(--ice)">UE5 · Environment · Original</p>
+        <h3 class="proj-title">Scape Island</h3>
+        <p class="proj-sub">Landscape · Water · Atmospheric lighting · Real-time</p>
+      </div>
+      <div class="proj-tags">
+        <span class="proj-tag">Landscape</span>
+        <span class="proj-tag">Lumen</span>
+        <span class="proj-tag">▶ Watch</span>
+      </div>
+    </div>
+  </div>
 </section>
 
 <!-- ── GALLERY ── -->
@@ -1172,69 +1192,50 @@ footer {
 
   <div class="gallery-grid">
 
-    <div class="gallery-item wide reveal" data-gtag="ue5">
-      <img src="https://static.wixstatic.com/media/b97032_51ad4e7e60b448f88762526ca84882c4~mv2.png/v1/fill/w_980,h_551,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/Space_ship_door_opening_0179.png" alt="Spaceship Interior UE5">
-      <div class="gallery-item-overlay">
-        <div><div class="gallery-item-label">Spaceship Interior</div><div class="gallery-item-sub">Unreal Engine 5 · Cinematic</div></div>
-      </div>
+    <div class="gallery-item wide reveal" data-gtag="ue5 vfx" onclick="openLightbox(this)">
+      <img src="https://static.wixstatic.com/media/b97032_95caf3da9e6e4e8981e5ef4fab5d1625~mv2.png" alt="Blade Runner Inspired">
+      <div class="gallery-item-overlay"><div><div class="gallery-item-label">Blade Runner Inspired</div><div class="gallery-item-sub">UE5 · Cinematic</div></div></div>
     </div>
 
-    <div class="gallery-item reveal" data-gtag="ue5">
-      <img src="https://static.wixstatic.com/media/b97032_4f2d1a6b5e7c4bbfba710e1803c84311~mv2.png/v1/crop/x_936,y_0,w_833,h_1080/fill/w_425,h_551,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Space_ship_door_opening_0468.png" alt="Spaceship Door">
-      <div class="gallery-item-overlay">
-        <div><div class="gallery-item-label">Spaceship Door Opening</div><div class="gallery-item-sub">UE5 · Lighting</div></div>
-      </div>
+    <div class="gallery-item reveal" data-gtag="ue5 vfx" onclick="openLightbox(this)">
+      <img src="https://static.wixstatic.com/media/b97032_43e1adceb0fc47c1959c625df7ce8b66~mv2.jpg" alt="Dune Inspired">
+      <div class="gallery-item-overlay"><div><div class="gallery-item-label">Dune Inspired</div><div class="gallery-item-sub">UE5 · Cinematic</div></div></div>
     </div>
 
-    <div class="gallery-item reveal" data-gtag="ue5 vfx">
-      <img src="https://static.wixstatic.com/media/b97032_467ce5c5376f473abe5a8073ebfaa84d~mv2.png/v1/crop/x_510,y_0,w_899,h_1080/fill/w_459,h_551,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Space_ship_door_opening_0082.png" alt="Spaceship Frame">
-      <div class="gallery-item-overlay">
-        <div><div class="gallery-item-label">Spaceship — Frame 82</div><div class="gallery-item-sub">UE5 · Atmosphere</div></div>
-      </div>
+    <div class="gallery-item reveal" data-gtag="ue5 env" onclick="openLightbox(this)">
+      <img src="https://static.wixstatic.com/media/b97032_42cab2c33f0e48ffbf8b36243b969c54~mv2.jpg" alt="The Forest">
+      <div class="gallery-item-overlay"><div><div class="gallery-item-label">The Forest</div><div class="gallery-item-sub">UE5 · PCG Environment</div></div></div>
     </div>
 
-    <div class="gallery-item reveal" data-gtag="vfx fx">
-      <img src="https://static.wixstatic.com/media/b97032_7cdddf5da89f4ccb850cacea6c35336d~mv2.jpg/v1/fill/w_980,h_551,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Fire_Power.jpg" alt="Fire Power VFX">
-      <div class="gallery-item-overlay">
-        <div><div class="gallery-item-label">Fire Power</div><div class="gallery-item-sub">Real-time VFX · FX</div></div>
-      </div>
+    <div class="gallery-item reveal" data-gtag="ue5 env" onclick="openLightbox(this)">
+      <img src="https://static.wixstatic.com/media/b97032_294d4fbba33f4f46ab93a75cce688bbb~mv2.jpeg" alt="Scape Island">
+      <div class="gallery-item-overlay"><div><div class="gallery-item-label">Scape Island</div><div class="gallery-item-sub">UE5 · Environment</div></div></div>
     </div>
 
-    <div class="gallery-item wide reveal" data-gtag="ue5 vfx">
+    <div class="gallery-item wide reveal" data-gtag="ue5" onclick="openLightbox(this)">
+      <img src="https://static.wixstatic.com/media/b97032_51ad4e7e60b448f88762526ca84882c4~mv2.png/v1/fill/w_980,h_551,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/Space_ship_door_opening_0179.png" alt="Spaceship Interior">
+      <div class="gallery-item-overlay"><div><div class="gallery-item-label">Spaceship Interior</div><div class="gallery-item-sub">UE5 · Cinematic</div></div></div>
+    </div>
+
+    <div class="gallery-item reveal" data-gtag="ue5 vfx" onclick="openLightbox(this)">
       <img src="https://static.wixstatic.com/media/b97032_890dae98a504416eafcc0b6f5ab54a01~mv2.png/v1/fill/w_980,h_551,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/Space_ship_door_opening_0317.png" alt="Spaceship Frame 317">
-      <div class="gallery-item-overlay">
-        <div><div class="gallery-item-label">Spaceship — Frame 317</div><div class="gallery-item-sub">UE5 · Camera Cinematic</div></div>
-      </div>
+      <div class="gallery-item-overlay"><div><div class="gallery-item-label">Spaceship — Frame 317</div><div class="gallery-item-sub">UE5 · Camera</div></div></div>
     </div>
 
-    <div class="gallery-item reveal" data-gtag="env ue5">
-      <img src="https://static.wixstatic.com/media/b97032_5d93a77013a342cdafb863ebdb823588f001.jpg/v1/fill/w_980,h_551,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/b97032_5d93a77013a342cdafb863ebdb823588f001.jpg" alt="Scape Island">
-      <div class="gallery-item-overlay">
-        <div><div class="gallery-item-label">Scape Island</div><div class="gallery-item-sub">Environment · Landscape</div></div>
-      </div>
+    <div class="gallery-item reveal" data-gtag="env ue5" onclick="openLightbox(this)">
+      <img src="https://static.wixstatic.com/media/b97032_5d93a77013a342cdafb863ebdb823588f001.jpg/v1/fill/w_980,h_551,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/b97032_5d93a77013a342cdafb863ebdb823588f001.jpg" alt="Scape Island Environment">
+      <div class="gallery-item-overlay"><div><div class="gallery-item-label">Scape Island — Detail</div><div class="gallery-item-sub">Environment · Landscape</div></div></div>
     </div>
 
-    <div class="gallery-item reveal" data-gtag="env ue5">
-      <img src="https://static.wixstatic.com/media/b97032_7259da42a6104473829042d830195b7ff002.jpg/v1/fill/w_980,h_551,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/b97032_7259da42a6104473829042d830195b7ff002.jpg" alt="Lost City">
-      <div class="gallery-item-overlay">
-        <div><div class="gallery-item-label">Lost City</div><div class="gallery-item-sub">Environment Timelapse · UE5</div></div>
-      </div>
-    </div>
+  </div>
 
-    <div class="gallery-item reveal" data-gtag="fx ue5">
-      <img src="https://static.wixstatic.com/media/b97032_9720ca436184485088943f541ad25a56f001.jpg/v1/fill/w_980,h_551,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/b97032_9720ca436184485088943f541ad25a56f001.jpg" alt="Shaders and FX">
-      <div class="gallery-item-overlay">
-        <div><div class="gallery-item-label">Shaders, Materials & FX</div><div class="gallery-item-sub">UE5 · Technical</div></div>
-      </div>
+  <!-- LIGHTBOX -->
+  <div id="lightbox" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,.92); z-index:9000; align-items:center; justify-content:center; padding:40px;" onclick="closeLightbox()">
+    <div style="position:relative; max-width:90vw; max-height:88vh;">
+      <img id="lightbox-img" src="" alt="" style="max-width:90vw; max-height:88vh; object-fit:contain; display:block;">
+      <p id="lightbox-label" style="font-family:'Barlow Condensed',sans-serif; font-size:13px; font-weight:600; letter-spacing:.14em; text-transform:uppercase; color:rgba(244,241,236,.7); margin-top:14px; text-align:center;"></p>
+      <button onclick="closeLightbox()" style="position:absolute; top:-16px; right:-16px; width:36px; height:36px; border-radius:50%; background:var(--coral); border:none; color:#fff; font-size:18px; cursor:pointer; display:flex; align-items:center; justify-content:center; line-height:1;">✕</button>
     </div>
-
-    <div class="gallery-item reveal" data-gtag="ue5 vfx">
-      <img src="https://static.wixstatic.com/media/b97032_bfbcb0aea8d946bd8f3a0d032b76958e~mv2.png/v1/crop/x_217,y_0,w_833,h_1080/fill/w_425,h_551,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Space_ship_door_opening_0483.png" alt="Spaceship Frame 483">
-      <div class="gallery-item-overlay">
-        <div><div class="gallery-item-label">Spaceship — Frame 483</div><div class="gallery-item-sub">UE5 · Lighting</div></div>
-      </div>
-    </div>
-
   </div>
 </section>
 
@@ -1605,7 +1606,23 @@ footer {
 </footer>
 
 <script>
-// Gallery filter
+// Lightbox
+function openLightbox(el) {
+  const img = el.querySelector('img');
+  const label = el.querySelector('.gallery-item-label');
+  document.getElementById('lightbox-img').src = img.src;
+  document.getElementById('lightbox-label').textContent = label ? label.textContent : '';
+  const lb = document.getElementById('lightbox');
+  lb.style.display = 'flex';
+  document.body.style.overflow = 'hidden';
+}
+function closeLightbox() {
+  document.getElementById('lightbox').style.display = 'none';
+  document.body.style.overflow = '';
+}
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+
+
 const gfilters = document.querySelectorAll('.gfilter');
 const gitems = document.querySelectorAll('.gallery-item[data-gtag]');
 gfilters.forEach(btn => {

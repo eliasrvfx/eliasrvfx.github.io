@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Elias Rodriguez — Technical Artist & VFX</title>
+<title>Elias Rodriguez — Real-Time Artist · UE5 · VFX</title>
 <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600&family=Barlow+Condensed:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -543,7 +543,62 @@ footer {
 .reveal-delay-3 { transition-delay: .3s; }
 .reveal-delay-4 { transition-delay: .4s; }
 
-/* ── PRODUCTION CREDITS ── */
+/* ── PITCH SECTION ── */
+#pitch {
+  background: var(--bg2);
+  padding: 0 52px;
+  border-bottom: 1px solid var(--border);
+}
+
+.pitch-label {
+  padding: 24px 0 0;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 11px; font-weight: 600;
+  letter-spacing: .26em; text-transform: uppercase;
+  color: var(--muted);
+  display: flex; align-items: center; gap: 12px;
+}
+.pitch-label::before { content:''; width:20px; height:2px; background:var(--muted); flex-shrink:0; }
+
+.pitch-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 0; border-top: 1px solid var(--border); margin-top: 20px;
+}
+
+.pitch-card {
+  padding: 36px 32px 40px;
+  border-right: 1px solid var(--border);
+  position: relative;
+  transition: background .25s;
+}
+.pitch-card:last-child { border-right: none; }
+.pitch-card:hover { background: rgba(255,255,255,.02); }
+
+.pitch-card-bar { height: 3px; width: 48px; margin-bottom: 20px; border-radius: 1px; }
+
+.pitch-card-title {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 18px; font-weight: 700; text-transform: uppercase;
+  letter-spacing: .06em; margin-bottom: 14px;
+}
+
+.pitch-card-body {
+  font-size: 14px; font-weight: 300; line-height: 1.8;
+  color: rgba(244,241,236,.55);
+}
+
+.pitch-card-body strong {
+  color: var(--text); font-weight: 500;
+}
+
+@media (max-width: 900px) {
+  #pitch { padding: 0 24px; }
+  .pitch-grid { grid-template-columns: 1fr; }
+  .pitch-card { border-right: none; border-bottom: 1px solid var(--border); }
+  .pitch-card:last-child { border-bottom: none; }
+}
+
+
 #credits {
   background: #0d0d0d;
   padding: 0 52px 48px;
@@ -883,8 +938,8 @@ footer {
 <nav>
   <div class="nav-logo">Elias <span>R.</span></div>
   <div class="nav-right">
+    <a href="#pitch">I Can Offer</a>
     <a href="#credits">Credits</a>
-    <a href="#s2">About</a>
     <a href="#s3">Work</a>
     <a href="#gallery">Gallery</a>
     <a href="#breakdowns">Breakdowns</a>
@@ -897,13 +952,13 @@ footer {
 <!-- ── S1: HERO ── -->
 <section id="s1">
   <div class="hero-left reveal">
-    <p class="hero-tag">Technical Artist · VFX · Real-Time Artist</p>
+    <p class="hero-tag">Real-Time Artist · Unreal Engine 5 · On-Set Capture · VFX</p>
     <h1 class="hero-name">
       Elias
       <span class="line2">Rodriguez</span>
     </h1>
     <p class="hero-role">London · Available for hire</p>
-    <p class="hero-desc">A Technical Artist working across film and real-time production — on-set capture, VFX, Unreal Engine 5, procedural tools and cinematic previsualisations.</p>
+    <p class="hero-desc">A Real-Time Artist working across film, TV and games — Unreal Engine 5, on-set capture and VFX.</p>
     <div class="hero-btns">
       <a href="https://youtu.be/Dpv45DwgldA" target="_blank" class="btn-teal">Watch Showreel</a>
       <a href="#s3" class="btn-ghost">View Work</a>
@@ -924,7 +979,39 @@ footer {
   <div class="cs3"></div><div class="cs4"></div>
 </div>
 
-<!-- ── PRODUCTION CREDITS ── -->
+<!-- ── PITCH — What I can offer ── -->
+<section id="pitch">
+  <p class="pitch-label">What I can offer you</p>
+  <div class="pitch-grid">
+
+    <div class="pitch-card">
+      <div class="pitch-card-bar" style="background:var(--gold)"></div>
+      <h3 class="pitch-card-title" style="color:var(--gold)">Film & TV</h3>
+      <p class="pitch-card-body">
+        I capture real sets, cast and props on location using <strong>LIDAR and photogrammetry</strong>, process the data through <strong>RealityCapture</strong> and rebuild the environment in <strong>Unreal Engine 5</strong>. Bring in additional assets, light the scene — and you have a real-time environment ready for previs or review, fast.
+      </p>
+    </div>
+
+    <div class="pitch-card">
+      <div class="pitch-card-bar" style="background:var(--teal)"></div>
+      <h3 class="pitch-card-title" style="color:var(--teal)">Games</h3>
+      <p class="pitch-card-body">
+        Real-time VFX built in <strong>Niagara</strong>, custom shaders and materials in the <strong>UE5 Material Editor</strong>, Blueprints and <strong>PCG environment tools</strong>. I build effects and systems that work in-engine — not just look good in a render.
+      </p>
+    </div>
+
+    <div class="pitch-card">
+      <div class="pitch-card-bar" style="background:var(--coral)"></div>
+      <h3 class="pitch-card-title" style="color:var(--coral)">Compositing & Post</h3>
+      <p class="pitch-card-body">
+        Quick comps and VFX pieces when needed — <strong>effects and materials</strong> built in Unreal Engine, with compositing experience to support previs and post pipelines.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+
 <section id="credits">
   <p class="credits-intro">Production Credits — Real Film & TV</p>
 
@@ -1005,10 +1092,10 @@ footer {
   <div class="reveal">
     <p class="sec-label teal">Who I am</p>
     <h2 class="sec-heading">
-      Technical Artist<br>
-      <em>on set & in engine</em>
+      Real-Time Artist<br>
+      <em>film, TV & games</em>
     </h2>
-    <p class="about-body">A Technical Artist working across film and real-time production — bridging physical sets and virtual worlds through on-set capture, VFX and Unreal Engine 5.</p>
+    <p class="about-body">A Real-Time Artist working across film, TV and games — bridging physical sets and virtual worlds through on-set capture, VFX and Unreal Engine 5.</p>
     <p class="about-body" style="margin-top:16px; font-size:14px; color:#7a7570; font-style:italic; border-left:2px solid rgba(212,168,83,.3); padding-left:16px; margin-top:24px;">
       Some cinematic projects featured here use freely available community assets from libraries such as Fab, Quixel Megascans and the Unreal Marketplace. My focus in these projects is lighting, atmosphere, camera work, VFX and real-time pipeline — not modelling from scratch. This reflects how real productions work: using the best available resources efficiently to deliver results.
     </p>
@@ -1046,7 +1133,7 @@ footer {
     <img src="https://static.wixstatic.com/media/b97032_fff6d97cd6f14f4cb4747116e0058075~mv2.jpg/v1/fill/w_980,h_994,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/IMG_9593_HEIC.jpg" alt="Elias Rodriguez" style="width:100%;height:100%;object-fit:cover;object-position:top center;filter:grayscale(.15) contrast(1.05);display:block;min-height:360px;">
     <div style="position:absolute;bottom:0;left:0;right:0;padding:20px 24px;background:linear-gradient(to top,rgba(244,241,236,.95) 0%,transparent 100%);">
       <p style="font-family:'Barlow Condensed',sans-serif;font-size:16px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:#0a0a0a;margin:0;">Elias Rodriguez</p>
-      <p style="font-size:12px;color:#888480;letter-spacing:.1em;text-transform:uppercase;margin:3px 0 0;">Technical Artist · London</p>
+      <p style="font-size:12px;color:#888480;letter-spacing:.1em;text-transform:uppercase;margin:3px 0 0;">Real-Time Artist · London</p>
     </div>
   </div>
 
@@ -1598,7 +1685,7 @@ footer {
 </section>
 
 <footer>
-  <p class="footer-copy">© 2026 Elias Rodriguez — Technical Artist & VFX · London</p>
+  <p class="footer-copy">© 2026 Elias Rodriguez — Real-Time Artist · UE5 & VFX · London</p>
   <div class="footer-links">
     <a href="https://www.youtube.com/@eliasrodriguezgallardo2244" target="_blank">YouTube</a>
     <a href="#s6">Contact</a>
